@@ -1,19 +1,898 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<style>body{background-color:white;}</style>
-<script src="factor_network_full_files/factor_network_full_files/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="factor_network_full_files/factor_network_full_files/vis-9.1.0/vis-network.min.css" rel="stylesheet" />
-<script src="factor_network_full_files/factor_network_full_files/vis-9.1.0/vis-network.min.js"></script>
-<script src="factor_network_full_files/factor_network_full_files/visNetwork-binding-2.1.2/visNetwork.js"></script>
-  <title>visNetwork</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Factor Network - Interactive Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #graph-container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(10, 14, 39, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 300px;
+            max-height: 85vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .info {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 13px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .legend {
+            margin-top: 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(10, 14, 39, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .control-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .slider {
+            width: 200px;
+            margin: 10px 0;
+        }
+
+        .freeze-btn {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+            padding: 8px 14px;
+            background: rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(102, 126, 234, 0.6);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .freeze-btn:hover {
+            background: rgba(102, 126, 234, 0.5);
+            border-color: #667eea;
+        }
+
+        .tooltip {
+            position: fixed;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 12px 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 13px;
+            pointer-events: none;
+            display: none;
+            z-index: 2000;
+            max-width: 500px;
+            min-width: 250px;
+            word-wrap: break-word;
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #667eea;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 3000;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .stats {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(10, 14, 39, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+            z-index: 1000;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            gap: 20px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<div id="htmlwidget_container">
-  <div id="htmlwidget-b1e2ea0c9602429f408e" style="width:100%;height:800px;" class="visNetwork html-widget"></div>
-</div>
-<script type="application/json" data-for="htmlwidget-b1e2ea0c9602429f408e">{"x":{"nodes":{"id":["F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12","F13","F14","F15","F16","F17","contour.interpolation_contour_mean_gradient","contour.interpolation_contour_gradient_std","timing.average_note_duration","timing.combined_strength_of_two_strongest_rhythmic_pulses","timing.combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.complete_rests_fraction","timing.difference_between_most_common_rhythmic_values","timing.duration_range","timing.duration_standard_deviation","timing.global_duration","inter_onset_interval.ioi_mean","inter_onset_interval.ioi_range","inter_onset_interval.ioi_standard_deviation","timing.longest_rhythmic_value","timing.maximum_note_duration","timing.mean_complete_rest_duration","timing.mean_duration","timing.mean_rhythmic_value","timing.median_complete_rest_duration","timing.minimum_note_duration","timing.modal_duration","timing.most_common_rhythmic_value","timing.note_density","timing.note_density_per_quarter_note","timing.note_density_per_quarter_note_variability","timing.note_density_variability","timing.number_of_moderate_rhythmic_pulses","timing.number_of_moderate_rhythmic_pulses_tempo_standardized","timing.number_of_relatively_strong_rhythmic_pulses","timing.number_of_relatively_strong_rhythmic_pulses_tempo_standardized","timing.number_of_strong_rhythmic_pulses","timing.number_of_strong_rhythmic_pulses_tempo_standardized","timing.polyrhythms","timing.polyrhythms_tempo_standardized","timing.prevalence_of_long_rhythmic_values","timing.prevalence_of_short_rhythmic_values","timing.prevalence_of_very_short_rhythmic_values","timing.shortest_rhythmic_value","timing.strength_ratio_of_two_strongest_rhythmic_pulses","timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.variability_of_note_durations","timing.harmonicity_of_two_strongest_rhythmic_pulses","timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.rhythmic_variability","timing.rhythmic_variability_tempo_standardized","timing.strength_of_strongest_rhythmic_pulse","timing.strength_of_strongest_rhythmic_pulse_tempo_standardized","timing.meter_accent","tonality.mean_cloud_diameter","tonality.std_cloud_diameter","tonality.mean_cloud_momentum","tonality.std_cloud_momentum","tonality.mean_tensile_strain","tonality.std_tensile_strain","metre.meter_denominator","complexity.complebm_rhythm","complexity.complebm_optimal","complexity.mean_duration_accent","timing.dotted_duration_transitions","timing.duration_entropy","timing.equal_duration_transitions","timing.half_duration_transitions","inter_onset_interval.ioi_contour_standard_deviation","inter_onset_interval.ioi_ratio_mean","inter_onset_interval.ioi_ratio_standard_deviation","timing.mean_rhythmic_value_run_length","timing.median_rhythmic_value_run_length","timing.npvi","timing.number_of_common_rhythmic_values_present","timing.prevalence_of_dotted_notes","timing.prevalence_of_most_common_rhythmic_value","timing.relative_prevalence_of_most_common_rhythmic_values","timing.variability_in_rhythmic_value_run_lengths","timing.strongest_rhythmic_pulse","timing.strongest_rhythmic_pulse_tempo_standardized","metre.syncopicity","complexity.duration_accent_std","corpus.mean_log_tfdf","absolute_pitch.number_of_unique_pitches","absolute_pitch.pitch_range","pitch_class.pitch_class_kurtosis","interval.absolute_interval_range","interval.minor_major_third_ratio","contour.step_contour_local_variation","contour.mean_melodic_accent","timing.length","timing.number_of_different_rhythmic_values_present","timing.number_of_unique_durations","timing.range_of_rhythmic_values","timing.total_number_of_notes","tonality.proportion_conjunct_scalar","tonality.proportion_scalar","expectation.mean_melodic_accent","complexity.complebm_pitch","lexical_diversity.simpsons_d","lexical_diversity.mean_entropy","corpus.norm_log_dist","corpus.mean_log_df","corpus.mean_global_local_weight","corpus.std_global_local_weight","corpus.std_global_weight","absolute_pitch.melodic_pitch_variety","absolute_pitch.repeated_notes","absolute_pitch.stepwise_motion","interval.amount_of_arpeggiation","interval.distance_between_most_prevalent_melodic_intervals","interval.interval_direction_std","interval.interval_entropy","interval.mean_absolute_interval","interval.modal_interval","contour.melodic_accent_std","expectation.melodic_accent_std","expectation.melodic_attraction_std","complexity.gradus","absolute_pitch.pitch_standard_deviation","interval.average_interval_span_by_melodic_arcs","interval.direction_of_melodic_motion","interval.interval_direction_mean","interval.melodic_large_intervals","interval.melodic_octaves","interval.melodic_perfect_fifths","interval.melodic_sevenths","interval.melodic_sixths","interval.standard_deviation_absolute_interval","contour.step_contour_global_variation","timing.prevalence_of_medium_rhythmic_values","timing.strength_of_second_strongest_rhythmic_pulse","timing.strength_of_second_strongest_rhythmic_pulse_tempo_standardized","absolute_pitch.interval_between_most_prevalent_pitches","absolute_pitch.mean_tessitura","absolute_pitch.pitch_entropy","pitch_class.dominant_spread","pitch_class.mean_pitch_class","pitch_class.most_common_pitch_class","pitch_class.strong_tonal_centres","interval.average_length_of_melodic_arcs","tonality.tonalness","expectation.mean_mobility","expectation.mobility_std","pitch_class.number_of_common_pitches_classes","pitch_class.number_of_unique_pitch_classes","interval.chromatic_motion","interval.melodic_thirds","contour.step_contour_global_direction","timing.onset_autocorr_peak","tonality.proportion_inscale","metre.syncopation","idyom.mean_information_content_pitch_ltm","timing.prevalence_of_very_long_rhythmic_values","lexical_diversity.yules_k","corpus.max_log_df","corpus.min_log_df","lexical_diversity.sichels_s","lexical_diversity.honores_h","lexical_diversity.mean_productivity","corpus.tfdf_spearman","corpus.tfdf_kendall","corpus.mean_global_weight","interval.number_of_common_melodic_intervals","interval.prevalence_of_most_common_melodic_interval","interval.relative_prevalence_of_most_common_melodic_intervals","tonality.longest_monotonic_conjunct_scalar_passage","tonality.longest_conjunct_scalar_passage","expectation.mean_melodic_attraction","absolute_pitch.first_pitch","absolute_pitch.importance_of_bass_register","absolute_pitch.importance_of_high_register","absolute_pitch.importance_of_middle_register","absolute_pitch.last_pitch","absolute_pitch.mean_pitch","absolute_pitch.most_common_pitch","pitch_class.last_pitch_class","pitch_class.pitch_class_kurtosis_after_folding","pitch_class.pitch_class_variability","tonality.referent","expectation.compltrans","absolute_pitch.number_of_common_pitches","absolute_pitch.prevalence_of_most_common_pitch","absolute_pitch.relative_prevalence_of_top_pitches","pitch_class.prevalence_of_most_common_pitch_class","pitch_class.relative_prevalence_of_top_pitch_classes","tonality.tonal_spike","timing.longest_complete_rest","timing.variability_of_complete_rest_durations","expectation.melodic_embellishment","absolute_pitch.tessitura_std","contour.interpolation_contour_global_direction","timing.second_strongest_rhythmic_pulse","timing.second_strongest_rhythmic_pulse_tempo_standardized"],"label":["1. Timing","2. Timing Variability","3. Melodic Complexity","4. Pitch Complexity","5. Intervallic Complexity","6. Timing Pulses","7. Pitch Variability","8. Pitch Expectancy","9. Corpus Summary","10. Lexical Diversity","11. Tonality","12. Pitch Summary","13. Pitch Commonality","14. Timing Rests","15. Timing Summary","16. Pitch Contour","17. Strongest Pulses","contour.interpolation_contour_mean_gradient","contour.interpolation_contour_gradient_std","timing.average_note_duration","timing.combined_strength_of_two_strongest_rhythmic_pulses","timing.combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.complete_rests_fraction","timing.difference_between_most_common_rhythmic_values","timing.duration_range","timing.duration_standard_deviation","timing.global_duration","inter_onset_interval.ioi_mean","inter_onset_interval.ioi_range","inter_onset_interval.ioi_standard_deviation","timing.longest_rhythmic_value","timing.maximum_note_duration","timing.mean_complete_rest_duration","timing.mean_duration","timing.mean_rhythmic_value","timing.median_complete_rest_duration","timing.minimum_note_duration","timing.modal_duration","timing.most_common_rhythmic_value","timing.note_density","timing.note_density_per_quarter_note","timing.note_density_per_quarter_note_variability","timing.note_density_variability","timing.number_of_moderate_rhythmic_pulses","timing.number_of_moderate_rhythmic_pulses_tempo_standardized","timing.number_of_relatively_strong_rhythmic_pulses","timing.number_of_relatively_strong_rhythmic_pulses_tempo_standardized","timing.number_of_strong_rhythmic_pulses","timing.number_of_strong_rhythmic_pulses_tempo_standardized","timing.polyrhythms","timing.polyrhythms_tempo_standardized","timing.prevalence_of_long_rhythmic_values","timing.prevalence_of_short_rhythmic_values","timing.prevalence_of_very_short_rhythmic_values","timing.shortest_rhythmic_value","timing.strength_ratio_of_two_strongest_rhythmic_pulses","timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.variability_of_note_durations","timing.harmonicity_of_two_strongest_rhythmic_pulses","timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.rhythmic_variability","timing.rhythmic_variability_tempo_standardized","timing.strength_of_strongest_rhythmic_pulse","timing.strength_of_strongest_rhythmic_pulse_tempo_standardized","timing.meter_accent","tonality.mean_cloud_diameter","tonality.std_cloud_diameter","tonality.mean_cloud_momentum","tonality.std_cloud_momentum","tonality.mean_tensile_strain","tonality.std_tensile_strain","metre.meter_denominator","complexity.complebm_rhythm","complexity.complebm_optimal","complexity.mean_duration_accent","timing.dotted_duration_transitions","timing.duration_entropy","timing.equal_duration_transitions","timing.half_duration_transitions","inter_onset_interval.ioi_contour_standard_deviation","inter_onset_interval.ioi_ratio_mean","inter_onset_interval.ioi_ratio_standard_deviation","timing.mean_rhythmic_value_run_length","timing.median_rhythmic_value_run_length","timing.npvi","timing.number_of_common_rhythmic_values_present","timing.prevalence_of_dotted_notes","timing.prevalence_of_most_common_rhythmic_value","timing.relative_prevalence_of_most_common_rhythmic_values","timing.variability_in_rhythmic_value_run_lengths","timing.strongest_rhythmic_pulse","timing.strongest_rhythmic_pulse_tempo_standardized","metre.syncopicity","complexity.duration_accent_std","corpus.mean_log_tfdf","absolute_pitch.number_of_unique_pitches","absolute_pitch.pitch_range","pitch_class.pitch_class_kurtosis","interval.absolute_interval_range","interval.minor_major_third_ratio","contour.step_contour_local_variation","contour.mean_melodic_accent","timing.length","timing.number_of_different_rhythmic_values_present","timing.number_of_unique_durations","timing.range_of_rhythmic_values","timing.total_number_of_notes","tonality.proportion_conjunct_scalar","tonality.proportion_scalar","expectation.mean_melodic_accent","complexity.complebm_pitch","lexical_diversity.simpsons_d","lexical_diversity.mean_entropy","corpus.norm_log_dist","corpus.mean_log_df","corpus.mean_global_local_weight","corpus.std_global_local_weight","corpus.std_global_weight","absolute_pitch.melodic_pitch_variety","absolute_pitch.repeated_notes","absolute_pitch.stepwise_motion","interval.amount_of_arpeggiation","interval.distance_between_most_prevalent_melodic_intervals","interval.interval_direction_std","interval.interval_entropy","interval.mean_absolute_interval","interval.modal_interval","contour.melodic_accent_std","expectation.melodic_accent_std","expectation.melodic_attraction_std","complexity.gradus","absolute_pitch.pitch_standard_deviation","interval.average_interval_span_by_melodic_arcs","interval.direction_of_melodic_motion","interval.interval_direction_mean","interval.melodic_large_intervals","interval.melodic_octaves","interval.melodic_perfect_fifths","interval.melodic_sevenths","interval.melodic_sixths","interval.standard_deviation_absolute_interval","contour.step_contour_global_variation","timing.prevalence_of_medium_rhythmic_values","timing.strength_of_second_strongest_rhythmic_pulse","timing.strength_of_second_strongest_rhythmic_pulse_tempo_standardized","absolute_pitch.interval_between_most_prevalent_pitches","absolute_pitch.mean_tessitura","absolute_pitch.pitch_entropy","pitch_class.dominant_spread","pitch_class.mean_pitch_class","pitch_class.most_common_pitch_class","pitch_class.strong_tonal_centres","interval.average_length_of_melodic_arcs","tonality.tonalness","expectation.mean_mobility","expectation.mobility_std","pitch_class.number_of_common_pitches_classes","pitch_class.number_of_unique_pitch_classes","interval.chromatic_motion","interval.melodic_thirds","contour.step_contour_global_direction","timing.onset_autocorr_peak","tonality.proportion_inscale","metre.syncopation","idyom.mean_information_content_pitch_ltm","timing.prevalence_of_very_long_rhythmic_values","lexical_diversity.yules_k","corpus.max_log_df","corpus.min_log_df","lexical_diversity.sichels_s","lexical_diversity.honores_h","lexical_diversity.mean_productivity","corpus.tfdf_spearman","corpus.tfdf_kendall","corpus.mean_global_weight","interval.number_of_common_melodic_intervals","interval.prevalence_of_most_common_melodic_interval","interval.relative_prevalence_of_most_common_melodic_intervals","tonality.longest_monotonic_conjunct_scalar_passage","tonality.longest_conjunct_scalar_passage","expectation.mean_melodic_attraction","absolute_pitch.first_pitch","absolute_pitch.importance_of_bass_register","absolute_pitch.importance_of_high_register","absolute_pitch.importance_of_middle_register","absolute_pitch.last_pitch","absolute_pitch.mean_pitch","absolute_pitch.most_common_pitch","pitch_class.last_pitch_class","pitch_class.pitch_class_kurtosis_after_folding","pitch_class.pitch_class_variability","tonality.referent","expectation.compltrans","absolute_pitch.number_of_common_pitches","absolute_pitch.prevalence_of_most_common_pitch","absolute_pitch.relative_prevalence_of_top_pitches","pitch_class.prevalence_of_most_common_pitch_class","pitch_class.relative_prevalence_of_top_pitch_classes","tonality.tonal_spike","timing.longest_complete_rest","timing.variability_of_complete_rest_durations","expectation.melodic_embellishment","absolute_pitch.tessitura_std","contour.interpolation_contour_global_direction","timing.second_strongest_rhythmic_pulse","timing.second_strongest_rhythmic_pulse_tempo_standardized"],"group":["factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","factor","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable","variable"],"shape":["ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","ellipse","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box","box"],"color":["#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#ff7f0e","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4","#1f77b4"],"size":[30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20],"font.size":[20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12],"title":["1. Timing","2. Timing Variability","3. Melodic Complexity","4. Pitch Complexity","5. Intervallic Complexity","6. Timing Pulses","7. Pitch Variability","8. Pitch Expectancy","9. Corpus Summary","10. Lexical Diversity","11. Tonality","12. Pitch Summary","13. Pitch Commonality","14. Timing Rests","15. Timing Summary","16. Pitch Contour","17. Strongest Pulses","contour.interpolation_contour_mean_gradient","contour.interpolation_contour_gradient_std","timing.average_note_duration","timing.combined_strength_of_two_strongest_rhythmic_pulses","timing.combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.complete_rests_fraction","timing.difference_between_most_common_rhythmic_values","timing.duration_range","timing.duration_standard_deviation","timing.global_duration","inter_onset_interval.ioi_mean","inter_onset_interval.ioi_range","inter_onset_interval.ioi_standard_deviation","timing.longest_rhythmic_value","timing.maximum_note_duration","timing.mean_complete_rest_duration","timing.mean_duration","timing.mean_rhythmic_value","timing.median_complete_rest_duration","timing.minimum_note_duration","timing.modal_duration","timing.most_common_rhythmic_value","timing.note_density","timing.note_density_per_quarter_note","timing.note_density_per_quarter_note_variability","timing.note_density_variability","timing.number_of_moderate_rhythmic_pulses","timing.number_of_moderate_rhythmic_pulses_tempo_standardized","timing.number_of_relatively_strong_rhythmic_pulses","timing.number_of_relatively_strong_rhythmic_pulses_tempo_standardized","timing.number_of_strong_rhythmic_pulses","timing.number_of_strong_rhythmic_pulses_tempo_standardized","timing.polyrhythms","timing.polyrhythms_tempo_standardized","timing.prevalence_of_long_rhythmic_values","timing.prevalence_of_short_rhythmic_values","timing.prevalence_of_very_short_rhythmic_values","timing.shortest_rhythmic_value","timing.strength_ratio_of_two_strongest_rhythmic_pulses","timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.variability_of_note_durations","timing.harmonicity_of_two_strongest_rhythmic_pulses","timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.rhythmic_variability","timing.rhythmic_variability_tempo_standardized","timing.strength_of_strongest_rhythmic_pulse","timing.strength_of_strongest_rhythmic_pulse_tempo_standardized","timing.meter_accent","tonality.mean_cloud_diameter","tonality.std_cloud_diameter","tonality.mean_cloud_momentum","tonality.std_cloud_momentum","tonality.mean_tensile_strain","tonality.std_tensile_strain","metre.meter_denominator","complexity.complebm_rhythm","complexity.complebm_optimal","complexity.mean_duration_accent","timing.dotted_duration_transitions","timing.duration_entropy","timing.equal_duration_transitions","timing.half_duration_transitions","inter_onset_interval.ioi_contour_standard_deviation","inter_onset_interval.ioi_ratio_mean","inter_onset_interval.ioi_ratio_standard_deviation","timing.mean_rhythmic_value_run_length","timing.median_rhythmic_value_run_length","timing.npvi","timing.number_of_common_rhythmic_values_present","timing.prevalence_of_dotted_notes","timing.prevalence_of_most_common_rhythmic_value","timing.relative_prevalence_of_most_common_rhythmic_values","timing.variability_in_rhythmic_value_run_lengths","timing.strongest_rhythmic_pulse","timing.strongest_rhythmic_pulse_tempo_standardized","metre.syncopicity","complexity.duration_accent_std","corpus.mean_log_tfdf","absolute_pitch.number_of_unique_pitches","absolute_pitch.pitch_range","pitch_class.pitch_class_kurtosis","interval.absolute_interval_range","interval.minor_major_third_ratio","contour.step_contour_local_variation","contour.mean_melodic_accent","timing.length","timing.number_of_different_rhythmic_values_present","timing.number_of_unique_durations","timing.range_of_rhythmic_values","timing.total_number_of_notes","tonality.proportion_conjunct_scalar","tonality.proportion_scalar","expectation.mean_melodic_accent","complexity.complebm_pitch","lexical_diversity.simpsons_d","lexical_diversity.mean_entropy","corpus.norm_log_dist","corpus.mean_log_df","corpus.mean_global_local_weight","corpus.std_global_local_weight","corpus.std_global_weight","absolute_pitch.melodic_pitch_variety","absolute_pitch.repeated_notes","absolute_pitch.stepwise_motion","interval.amount_of_arpeggiation","interval.distance_between_most_prevalent_melodic_intervals","interval.interval_direction_std","interval.interval_entropy","interval.mean_absolute_interval","interval.modal_interval","contour.melodic_accent_std","expectation.melodic_accent_std","expectation.melodic_attraction_std","complexity.gradus","absolute_pitch.pitch_standard_deviation","interval.average_interval_span_by_melodic_arcs","interval.direction_of_melodic_motion","interval.interval_direction_mean","interval.melodic_large_intervals","interval.melodic_octaves","interval.melodic_perfect_fifths","interval.melodic_sevenths","interval.melodic_sixths","interval.standard_deviation_absolute_interval","contour.step_contour_global_variation","timing.prevalence_of_medium_rhythmic_values","timing.strength_of_second_strongest_rhythmic_pulse","timing.strength_of_second_strongest_rhythmic_pulse_tempo_standardized","absolute_pitch.interval_between_most_prevalent_pitches","absolute_pitch.mean_tessitura","absolute_pitch.pitch_entropy","pitch_class.dominant_spread","pitch_class.mean_pitch_class","pitch_class.most_common_pitch_class","pitch_class.strong_tonal_centres","interval.average_length_of_melodic_arcs","tonality.tonalness","expectation.mean_mobility","expectation.mobility_std","pitch_class.number_of_common_pitches_classes","pitch_class.number_of_unique_pitch_classes","interval.chromatic_motion","interval.melodic_thirds","contour.step_contour_global_direction","timing.onset_autocorr_peak","tonality.proportion_inscale","metre.syncopation","idyom.mean_information_content_pitch_ltm","timing.prevalence_of_very_long_rhythmic_values","lexical_diversity.yules_k","corpus.max_log_df","corpus.min_log_df","lexical_diversity.sichels_s","lexical_diversity.honores_h","lexical_diversity.mean_productivity","corpus.tfdf_spearman","corpus.tfdf_kendall","corpus.mean_global_weight","interval.number_of_common_melodic_intervals","interval.prevalence_of_most_common_melodic_interval","interval.relative_prevalence_of_most_common_melodic_intervals","tonality.longest_monotonic_conjunct_scalar_passage","tonality.longest_conjunct_scalar_passage","expectation.mean_melodic_attraction","absolute_pitch.first_pitch","absolute_pitch.importance_of_bass_register","absolute_pitch.importance_of_high_register","absolute_pitch.importance_of_middle_register","absolute_pitch.last_pitch","absolute_pitch.mean_pitch","absolute_pitch.most_common_pitch","pitch_class.last_pitch_class","pitch_class.pitch_class_kurtosis_after_folding","pitch_class.pitch_class_variability","tonality.referent","expectation.compltrans","absolute_pitch.number_of_common_pitches","absolute_pitch.prevalence_of_most_common_pitch","absolute_pitch.relative_prevalence_of_top_pitches","pitch_class.prevalence_of_most_common_pitch_class","pitch_class.relative_prevalence_of_top_pitch_classes","tonality.tonal_spike","timing.longest_complete_rest","timing.variability_of_complete_rest_durations","expectation.melodic_embellishment","absolute_pitch.tessitura_std","contour.interpolation_contour_global_direction","timing.second_strongest_rhythmic_pulse","timing.second_strongest_rhythmic_pulse_tempo_standardized"]},"edges":{"from":["F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F1","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F2","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F3","F4","F4","F4","F4","F4","F4","F4","F4","F4","F4","F4","F4","F4","F4","F4","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F5","F6","F6","F6","F6","F6","F6","F6","F6","F6","F6","F6","F6","F6","F6","F6","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F7","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F8","F9","F9","F9","F9","F9","F9","F9","F10","F10","F10","F10","F10","F10","F10","F10","F10","F10","F10","F11","F11","F11","F11","F11","F11","F11","F11","F11","F11","F11","F11","F11","F11","F12","F12","F12","F12","F12","F12","F12","F12","F12","F12","F12","F12","F13","F13","F13","F13","F13","F13","F13","F14","F14","F14","F14","F14","F14","F14","F15","F15","F15","F15","F15","F15","F15","F15","F15","F15","F15","F15","F15","F16","F16","F16","F16","F16","F16","F16","F16","F17","F17","F17","F17"],"to":["contour.interpolation_contour_mean_gradient","contour.interpolation_contour_gradient_std","timing.average_note_duration","timing.combined_strength_of_two_strongest_rhythmic_pulses","timing.combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.complete_rests_fraction","timing.difference_between_most_common_rhythmic_values","timing.duration_range","timing.duration_standard_deviation","timing.global_duration","inter_onset_interval.ioi_mean","inter_onset_interval.ioi_range","inter_onset_interval.ioi_standard_deviation","timing.longest_rhythmic_value","timing.maximum_note_duration","timing.mean_complete_rest_duration","timing.mean_duration","timing.mean_rhythmic_value","timing.median_complete_rest_duration","timing.minimum_note_duration","timing.modal_duration","timing.most_common_rhythmic_value","timing.note_density","timing.note_density_per_quarter_note","timing.note_density_per_quarter_note_variability","timing.note_density_variability","timing.number_of_moderate_rhythmic_pulses","timing.number_of_moderate_rhythmic_pulses_tempo_standardized","timing.number_of_relatively_strong_rhythmic_pulses","timing.number_of_relatively_strong_rhythmic_pulses_tempo_standardized","timing.number_of_strong_rhythmic_pulses","timing.number_of_strong_rhythmic_pulses_tempo_standardized","timing.polyrhythms","timing.polyrhythms_tempo_standardized","timing.prevalence_of_long_rhythmic_values","timing.prevalence_of_short_rhythmic_values","timing.prevalence_of_very_short_rhythmic_values","timing.shortest_rhythmic_value","timing.strength_ratio_of_two_strongest_rhythmic_pulses","timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.variability_of_note_durations","timing.harmonicity_of_two_strongest_rhythmic_pulses","timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.rhythmic_variability","timing.rhythmic_variability_tempo_standardized","timing.strength_of_strongest_rhythmic_pulse","timing.strength_of_strongest_rhythmic_pulse_tempo_standardized","timing.meter_accent","tonality.mean_cloud_diameter","tonality.std_cloud_diameter","tonality.mean_cloud_momentum","tonality.std_cloud_momentum","tonality.mean_tensile_strain","tonality.std_tensile_strain","metre.meter_denominator","complexity.complebm_rhythm","complexity.complebm_optimal","complexity.mean_duration_accent","timing.dotted_duration_transitions","timing.duration_entropy","timing.equal_duration_transitions","timing.half_duration_transitions","inter_onset_interval.ioi_contour_standard_deviation","inter_onset_interval.ioi_ratio_mean","inter_onset_interval.ioi_ratio_standard_deviation","timing.mean_rhythmic_value_run_length","timing.median_rhythmic_value_run_length","timing.npvi","timing.number_of_common_rhythmic_values_present","timing.polyrhythms","timing.polyrhythms_tempo_standardized","timing.prevalence_of_dotted_notes","timing.prevalence_of_most_common_rhythmic_value","timing.relative_prevalence_of_most_common_rhythmic_values","timing.variability_in_rhythmic_value_run_lengths","timing.strongest_rhythmic_pulse","timing.strongest_rhythmic_pulse_tempo_standardized","metre.syncopicity","complexity.complebm_rhythm","complexity.duration_accent_std","corpus.mean_log_tfdf","absolute_pitch.number_of_unique_pitches","absolute_pitch.pitch_range","pitch_class.pitch_class_kurtosis","interval.absolute_interval_range","interval.minor_major_third_ratio","contour.step_contour_local_variation","contour.mean_melodic_accent","timing.duration_range","timing.global_duration","timing.length","timing.number_of_different_rhythmic_values_present","timing.number_of_unique_durations","timing.range_of_rhythmic_values","timing.total_number_of_notes","tonality.proportion_conjunct_scalar","tonality.proportion_scalar","expectation.mean_melodic_accent","complexity.complebm_pitch","complexity.complebm_optimal","lexical_diversity.simpsons_d","lexical_diversity.mean_entropy","corpus.norm_log_dist","corpus.mean_log_df","corpus.mean_global_local_weight","corpus.std_global_local_weight","corpus.std_global_weight","absolute_pitch.melodic_pitch_variety","absolute_pitch.repeated_notes","absolute_pitch.stepwise_motion","interval.amount_of_arpeggiation","interval.distance_between_most_prevalent_melodic_intervals","interval.interval_direction_std","interval.interval_entropy","interval.mean_absolute_interval","interval.modal_interval","contour.mean_melodic_accent","contour.melodic_accent_std","expectation.mean_melodic_accent","expectation.melodic_accent_std","expectation.melodic_attraction_std","complexity.gradus","absolute_pitch.melodic_pitch_variety","absolute_pitch.pitch_range","absolute_pitch.pitch_standard_deviation","interval.absolute_interval_range","interval.average_interval_span_by_melodic_arcs","interval.direction_of_melodic_motion","interval.interval_direction_mean","interval.interval_entropy","interval.mean_absolute_interval","interval.melodic_large_intervals","interval.melodic_octaves","interval.melodic_perfect_fifths","interval.melodic_sevenths","interval.melodic_sixths","interval.standard_deviation_absolute_interval","contour.step_contour_global_variation","contour.step_contour_local_variation","contour.interpolation_contour_mean_gradient","contour.interpolation_contour_gradient_std","corpus.mean_log_tfdf","timing.difference_between_most_common_rhythmic_values","timing.minimum_note_duration","timing.prevalence_of_medium_rhythmic_values","timing.prevalence_of_very_short_rhythmic_values","timing.range_of_rhythmic_values","timing.shortest_rhythmic_value","timing.strength_ratio_of_two_strongest_rhythmic_pulses","timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.harmonicity_of_two_strongest_rhythmic_pulses","timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized","timing.strength_of_second_strongest_rhythmic_pulse","timing.strength_of_second_strongest_rhythmic_pulse_tempo_standardized","timing.strength_of_strongest_rhythmic_pulse","timing.strength_of_strongest_rhythmic_pulse_tempo_standardized","complexity.duration_accent_std","absolute_pitch.interval_between_most_prevalent_pitches","absolute_pitch.mean_tessitura","absolute_pitch.number_of_unique_pitches","absolute_pitch.pitch_entropy","absolute_pitch.pitch_range","absolute_pitch.pitch_standard_deviation","pitch_class.dominant_spread","pitch_class.mean_pitch_class","pitch_class.most_common_pitch_class","pitch_class.pitch_class_kurtosis","pitch_class.strong_tonal_centres","interval.average_interval_span_by_melodic_arcs","interval.average_length_of_melodic_arcs","contour.step_contour_global_variation","tonality.tonalness","expectation.mean_mobility","expectation.mobility_std","absolute_pitch.number_of_unique_pitches","absolute_pitch.pitch_entropy","pitch_class.number_of_common_pitches_classes","pitch_class.number_of_unique_pitch_classes","interval.chromatic_motion","interval.interval_entropy","interval.melodic_thirds","contour.step_contour_global_direction","timing.onset_autocorr_peak","tonality.proportion_inscale","tonality.std_cloud_diameter","tonality.std_tensile_strain","metre.syncopation","complexity.complebm_pitch","complexity.complebm_optimal","idyom.mean_information_content_pitch_ltm","timing.prevalence_of_very_long_rhythmic_values","lexical_diversity.yules_k","lexical_diversity.simpsons_d","lexical_diversity.mean_entropy","corpus.norm_log_dist","corpus.max_log_df","corpus.min_log_df","contour.step_contour_local_variation","lexical_diversity.yules_k","lexical_diversity.sichels_s","lexical_diversity.honores_h","lexical_diversity.mean_productivity","corpus.tfdf_spearman","corpus.tfdf_kendall","corpus.mean_global_local_weight","corpus.std_global_local_weight","corpus.mean_global_weight","corpus.std_global_weight","absolute_pitch.stepwise_motion","interval.amount_of_arpeggiation","interval.average_length_of_melodic_arcs","interval.interval_entropy","interval.melodic_thirds","interval.number_of_common_melodic_intervals","interval.prevalence_of_most_common_melodic_interval","interval.relative_prevalence_of_most_common_melodic_intervals","tonality.longest_monotonic_conjunct_scalar_passage","tonality.longest_conjunct_scalar_passage","tonality.proportion_conjunct_scalar","tonality.proportion_scalar","expectation.mean_melodic_attraction","corpus.mean_log_tfdf","absolute_pitch.first_pitch","absolute_pitch.importance_of_bass_register","absolute_pitch.importance_of_high_register","absolute_pitch.importance_of_middle_register","absolute_pitch.last_pitch","absolute_pitch.mean_pitch","absolute_pitch.most_common_pitch","pitch_class.last_pitch_class","pitch_class.pitch_class_kurtosis_after_folding","pitch_class.pitch_class_variability","tonality.referent","expectation.compltrans","absolute_pitch.number_of_common_pitches","absolute_pitch.prevalence_of_most_common_pitch","absolute_pitch.relative_prevalence_of_top_pitches","pitch_class.dominant_spread","pitch_class.prevalence_of_most_common_pitch_class","pitch_class.relative_prevalence_of_top_pitch_classes","tonality.tonal_spike","timing.complete_rests_fraction","inter_onset_interval.ioi_range","inter_onset_interval.ioi_standard_deviation","timing.longest_complete_rest","timing.mean_complete_rest_duration","timing.median_complete_rest_duration","timing.variability_of_complete_rest_durations","timing.dotted_duration_transitions","timing.duration_entropy","timing.half_duration_transitions","inter_onset_interval.ioi_ratio_mean","inter_onset_interval.ioi_ratio_standard_deviation","timing.number_of_different_rhythmic_values_present","timing.number_of_moderate_rhythmic_pulses","timing.number_of_moderate_rhythmic_pulses_tempo_standardized","timing.number_of_strong_rhythmic_pulses","timing.number_of_strong_rhythmic_pulses_tempo_standardized","timing.number_of_unique_durations","timing.prevalence_of_dotted_notes","expectation.melodic_embellishment","absolute_pitch.first_pitch","absolute_pitch.mean_tessitura","absolute_pitch.tessitura_std","interval.direction_of_melodic_motion","interval.interval_direction_mean","contour.step_contour_global_direction","contour.interpolation_contour_global_direction","tonality.tonal_spike","timing.second_strongest_rhythmic_pulse","timing.second_strongest_rhythmic_pulse_tempo_standardized","timing.strongest_rhythmic_pulse","timing.strongest_rhythmic_pulse_tempo_standardized"],"value":[6.151396777336001,5.950053595175532,8.729181563055498,9.751120324039267,9.751120324039265,3.312553458329644,4.478221848471355,6.391106645039404,7.451197381922721,6.607753919466823,8.578645305067322,5.262876038111997,6.744868570961851,7.553772376804319,7.466430971290949,3.661482386713493,8.729181563055507,8.738739865449039,3.842986448762162,8.658969682345939,8.239721081916647,8.229555514951148,9.039842147315255,9.039842147315255,5.242556649887804,3.70067135259522,6.814875020205834,6.814875020205831,7.745030326727774,7.745030326727775,8.792024084132242,8.792024084132242,8.439591768317324,8.439591768317326,9.036180658321037,9.326941781188484,4.997557056339536,8.654490657138489,6.249182520795848,6.249182520795848,7.451197381922723,6.053844958370298,6.053844958370295,9.541052352023659,9.541052352023657,9.399054703189325,9.399054703189325,8.11114153166775,9.294500067120582,5.633641346941047,8.078351848860981,7.662358690816927,3.567505164830688,3.706352318714063,5.529000745059005,7.25170777883687,5.638280188930803,9.96341142351727,4.1052460618873,6.829027176626693,10.38459638543456,7.345500027262024,10.30856291912611,5.864352894218624,4.4935055405876,6.487932868847718,4.199274953523418,9.69898958263839,5.958049354800636,3.435974941395665,3.435974941395665,4.704662918362017,8.471440231595544,6.978178263071813,7.612780067044234,3.477372182105118,3.477372182105118,3.959214727998665,3.90308862699064,5.03500595986837,3.963643986605849,3.815581629815843,3.037330534885501,3.063232478454617,3.579488005872353,3.174935040013046,7.625618582145234,4.705876696119502,3.182306177269271,6.080651497091254,10.24748539088457,4.512792896702764,4.620576194542983,4.433438299991649,10.24748539088458,4.039764096629893,6.183340357230399,4.705876696119499,6.57108458316249,5.163011391850985,4.002138999656014,9.074820893889633,5.886764366960303,5.330138661828329,4.050636144256235,7.075122900547161,3.61843765853364,4.348692472924388,9.842399069508193,5.505798101003032,6.411695829764627,4.452212298420812,9.79094394581729,3.446443581214504,4.416785096529358,6.220430709932682,4.815339472234888,9.146077175010978,4.815339472234887,9.146077175010975,4.15856496157881,8.870735685214115,3.278689162805335,3.576336243911933,4.310889993543742,7.296532632651993,5.729950484378772,3.052283472591871,3.200228234005374,4.149240467723605,7.077549878573808,3.346629675722877,5.178694243235581,3.954393438320325,3.665478339680486,4.214475954352671,9.702396345407024,4.357403792809698,4.258164584101148,3.573168196519872,4.035827570334629,3.692622583592739,3.185475857017025,3.51635529056795,5.831156131778227,4.207237650350813,3.070971968666569,3.514383085405798,7.576114621383233,7.576114621383237,7.28529239182622,7.28529239182622,8.381016902095034,8.381016902095034,3.122582165313816,3.122582165313816,5.095385567191727,4.260965633782472,3.874229263779839,4.340727499564395,5.226717769711001,4.710828726333379,6.534352657126981,3.242044071016383,4.958984390903161,4.182338348692874,3.418379682193053,4.222937348726779,3.557429457782608,3.447248546179345,6.089129810592579,5.503052898620998,8.37879569864832,8.382438763532354,6.993336798385656,5.843554838584744,5.589277182453404,8.78935475770388,6.340259548180732,3.430569142262623,3.676218237836534,3.219451119858394,3.29336699372536,3.99148434026674,4.061136721138412,4.872864681703689,3.352262480589696,5.628543989838136,3.739056640231056,3.573034939636551,6.2383590984646,9.332568974820257,10.09458234582005,5.971595057912548,9.863003950409745,9.158990179114697,8.920613325540669,3.018868031889696,3.641886460680726,8.077932320902944,8.109649068105591,9.612892991920258,5.877402535076104,5.951934843293346,9.534146943804458,6.079323678774079,6.873580633009784,7.110667637699502,6.036937301553479,5.437814035503168,5.241600408561421,4.22878916700467,6.696762451650443,4.049519527076127,6.073588850662216,4.229041364448341,4.371881230618744,5.742157832418347,5.169878389492544,3.563431762307607,5.35677365485922,5.47832321806762,5.322510951178502,3.835089754842858,7.967235396417581,7.170866177316628,7.607944389171482,9.480204955590661,8.600786777483432,5.06726114687784,3.12599965399722,3.122090628641448,5.954482964247278,3.42365593509129,3.590855164971939,8.205101579250742,7.790652777962874,3.573997702459762,8.99700320455173,8.27266789147405,4.418636456983881,4.662762852392728,5.747839487512532,4.256317142709324,9.002285191249289,7.196487954284063,6.039507463676332,7.961167410213835,5.281313871610945,3.289571983675839,6.764280128110661,3.518400065874504,3.107421566896309,3.441243410370786,3.405097762962723,3.405097762962725,3.296187132623712,3.296187132623711,3.681554125310153,5.015963749126121,5.818724174048534,5.503355482036002,5.196524711912357,4.698444460474043,5.424909226824198,5.419526151632429,5.005762256267458,6.246700743975445,3.215856568631014,9.086761439494476,9.086761439494484,7.23232452080604,7.232324520806038],"title":["Loading: -0.615","Loading: -0.595","Loading: 0.873","Loading: 0.975","Loading: 0.975","Loading: -0.331","Loading: 0.448","Loading: 0.639","Loading: 0.745","Loading: 0.661","Loading: 0.858","Loading: 0.526","Loading: 0.674","Loading: 0.755","Loading: 0.747","Loading: 0.366","Loading: 0.873","Loading: 0.874","Loading: 0.384","Loading: 0.866","Loading: 0.824","Loading: 0.823","Loading: -0.904","Loading: -0.904","Loading: -0.524","Loading: -0.37","Loading: -0.681","Loading: -0.681","Loading: -0.775","Loading: -0.775","Loading: -0.879","Loading: -0.879","Loading: 0.844","Loading: 0.844","Loading: 0.904","Loading: -0.933","Loading: -0.5","Loading: 0.865","Loading: 0.625","Loading: 0.625","Loading: 0.745","Loading: 0.605","Loading: 0.605","Loading: 0.954","Loading: 0.954","Loading: 0.94","Loading: 0.94","Loading: -0.811","Loading: -0.929","Loading: -0.563","Loading: 0.808","Loading: 0.766","Loading: 0.357","Loading: 0.371","Loading: -0.553","Loading: -0.725","Loading: -0.564","Loading: 0.996","Loading: 0.411","Loading: 0.683","Loading: -1.038","Loading: 0.735","Loading: 1.031","Loading: 0.586","Loading: 0.449","Loading: -0.649","Loading: -0.42","Loading: 0.97","Loading: 0.596","Loading: -0.344","Loading: -0.344","Loading: 0.47","Loading: -0.847","Loading: 0.698","Loading: -0.761","Loading: -0.348","Loading: -0.348","Loading: 0.396","Loading: 0.39","Loading: 0.504","Loading: -0.396","Loading: 0.382","Loading: 0.304","Loading: -0.306","Loading: 0.358","Loading: 0.317","Loading: 0.763","Loading: -0.471","Loading: 0.318","Loading: 0.608","Loading: 1.025","Loading: 0.451","Loading: 0.462","Loading: 0.443","Loading: 1.025","Loading: -0.404","Loading: -0.618","Loading: -0.471","Loading: 0.657","Loading: 0.516","Loading: -0.4","Loading: 0.907","Loading: -0.589","Loading: -0.533","Loading: 0.405","Loading: 0.708","Loading: 0.362","Loading: 0.435","Loading: -0.984","Loading: 0.551","Loading: -0.641","Loading: -0.445","Loading: 0.979","Loading: 0.345","Loading: 0.442","Loading: 0.622","Loading: -0.482","Loading: -0.915","Loading: -0.482","Loading: -0.915","Loading: 0.416","Loading: 0.887","Loading: 0.328","Loading: 0.358","Loading: 0.431","Loading: 0.73","Loading: 0.573","Loading: -0.305","Loading: -0.32","Loading: 0.415","Loading: 0.708","Loading: 0.335","Loading: 0.518","Loading: 0.395","Loading: 0.367","Loading: 0.421","Loading: 0.97","Loading: 0.436","Loading: 0.426","Loading: 0.357","Loading: 0.404","Loading: -0.369","Loading: -0.319","Loading: 0.352","Loading: -0.583","Loading: 0.421","Loading: -0.307","Loading: 0.351","Loading: 0.758","Loading: 0.758","Loading: 0.729","Loading: 0.729","Loading: -0.838","Loading: -0.838","Loading: 0.312","Loading: 0.312","Loading: -0.51","Loading: 0.426","Loading: 0.387","Loading: 0.434","Loading: 0.523","Loading: 0.471","Loading: 0.653","Loading: 0.324","Loading: -0.496","Loading: -0.418","Loading: -0.342","Loading: -0.422","Loading: 0.356","Loading: 0.345","Loading: 0.609","Loading: 0.55","Loading: 0.838","Loading: 0.838","Loading: 0.699","Loading: 0.584","Loading: -0.559","Loading: 0.879","Loading: 0.634","Loading: 0.343","Loading: -0.368","Loading: 0.322","Loading: 0.329","Loading: -0.399","Loading: 0.406","Loading: 0.487","Loading: 0.335","Loading: 0.563","Loading: 0.374","Loading: -0.357","Loading: 0.624","Loading: 0.933","Loading: 1.009","Loading: -0.597","Loading: 0.986","Loading: -0.916","Loading: 0.892","Loading: -0.302","Loading: -0.364","Loading: -0.808","Loading: 0.811","Loading: 0.961","Loading: 0.588","Loading: 0.595","Loading: -0.953","Loading: -0.608","Loading: -0.687","Loading: -0.711","Loading: 0.604","Loading: -0.544","Loading: 0.524","Loading: -0.423","Loading: -0.67","Loading: -0.405","Loading: 0.607","Loading: -0.423","Loading: 0.437","Loading: 0.574","Loading: 0.517","Loading: 0.356","Loading: 0.536","Loading: 0.548","Loading: 0.532","Loading: -0.384","Loading: 0.797","Loading: -0.717","Loading: 0.761","Loading: 0.948","Loading: 0.86","Loading: 0.507","Loading: -0.313","Loading: 0.312","Loading: 0.595","Loading: 0.342","Loading: 0.359","Loading: -0.821","Loading: 0.779","Loading: 0.357","Loading: -0.9","Loading: 0.827","Loading: -0.442","Loading: 0.466","Loading: 0.575","Loading: 0.426","Loading: 0.9","Loading: 0.72","Loading: 0.604","Loading: 0.796","Loading: 0.528","Loading: 0.329","Loading: -0.676","Loading: 0.352","Loading: 0.311","Loading: 0.344","Loading: 0.341","Loading: 0.341","Loading: -0.33","Loading: -0.33","Loading: 0.368","Loading: 0.502","Loading: 0.582","Loading: -0.55","Loading: -0.52","Loading: -0.47","Loading: 0.542","Loading: 0.542","Loading: 0.501","Loading: 0.625","Loading: 0.322","Loading: -0.909","Loading: -0.909","Loading: 0.723","Loading: 0.723"],"color":["red","red","green","green","green","red","green","green","green","green","green","green","green","green","green","green","green","green","green","green","green","green","red","red","red","red","red","red","red","red","red","red","green","green","green","red","red","green","green","green","green","green","green","green","green","green","green","red","red","red","green","green","green","green","red","red","red","green","green","green","red","green","green","green","green","red","red","green","green","red","red","green","red","green","red","red","red","green","green","green","red","green","green","red","green","green","green","red","green","green","green","green","green","green","green","red","red","red","green","green","red","green","red","red","green","green","green","green","red","green","red","red","green","green","green","green","red","red","red","red","green","green","green","green","green","green","green","red","red","green","green","green","green","green","green","green","green","green","green","green","green","red","red","green","red","green","red","green","green","green","green","green","red","red","green","green","red","green","green","green","green","green","green","green","red","red","red","red","green","green","green","green","green","green","green","green","red","green","green","green","red","green","green","red","green","green","green","green","green","red","green","green","green","red","green","red","green","red","red","red","green","green","green","green","red","red","red","red","green","red","green","red","red","red","green","red","green","green","green","green","green","green","green","red","green","red","green","green","green","green","red","green","green","green","green","red","green","green","red","green","red","green","green","green","green","green","green","green","green","green","red","green","green","green","green","green","red","red","green","green","green","red","red","red","green","green","green","green","green","red","red","green","green"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"groups":{"factor":{"color":"#ff7f0e","shape":"ellipse"},"useDefaultGroups":true,"variable":{"color":"#1f77b4","shape":"box"}},"interaction":{"hover":true,"dragNodes":true,"dragView":true,"navigationButtons":true,"zoomView":true,"zoomSpeed":1},"layout":{"randomSeed":123},"physics":{"solver":"forceAtlas2Based","forceAtlas2Based":{"gravitationalConstant":-50}}},"groups":["factor","variable"],"width":"100%","height":"800px","idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":true,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false,"variable":"group","main":"Select by group","values":["factor","variable"]},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","legend":{"width":0.1,"useGroups":true,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"main":{"text":"Node Type","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:14px;text-align:center;"}}},"evals":[],"jsHooks":[]}</script>
-<script type="application/htmlwidget-sizing" data-for="htmlwidget-b1e2ea0c9602429f408e">{"viewer":{"width":"100%","height":"800px","padding":15,"fill":false},"browser":{"width":"100%","height":"800px","padding":40,"fill":false}}</script>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.8); font-size: 16px;">Initializing 3D visualization...</p>
+    </div>
+
+    <div class="overlay">
+        <h1>Factor Network</h1>
+        <div class="info">
+            Explore the 17-factor structure of melodic features with rainbow-colored categories.  Click and drag to rotate, scroll to zoom, click nodes to highlight connections.
+        </div>
+        <input type="text" class="search-box" id="search" placeholder="Search nodes (e.g., 'timing', 'pitch')...">
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff0000; color: #ff0000; box-shadow: 0 0 20px #ff0000;"></div>
+                <span><strong>Factors (17)</strong></span>
+            </div>
+            <div style="font-size: 10px; margin: 8px 0 4px 0; color: rgba(255,255,255,0.5);">Variables by Category:</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00ff00; color: #00ff00;"></div>
+                <span style="font-size: 11px;">Absolute Pitch</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff00ff; color: #ff00ff;"></div>
+                <span style="font-size: 11px;">Complexity</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffff00; color: #ffff00;"></div>
+                <span style="font-size: 11px;">Contour</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff0080; color: #ff0080;"></div>
+                <span style="font-size: 11px;">Corpus</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #8000ff; color: #8000ff;"></div>
+                <span style="font-size: 11px;">Expectation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00ff80; color: #00ff80;"></div>
+                <span style="font-size: 11px;">Inter-Onset Interval</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00ffff; color: #00ffff;"></div>
+                <span style="font-size: 11px;">Pitch Class</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #0080ff; color: #0080ff;"></div>
+                <span style="font-size: 11px;">Pitch Interval</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff7f00; color: #ff7f00;"></div>
+                <span style="font-size: 11px;">Timing</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #0000ff; color: #0000ff;"></div>
+                <span style="font-size: 11px;">Tonality</span>
+            </div>
+            <div style="font-size: 10px; margin: 8px 0 4px 0; color: rgba(255,255,255,0.5);">Loadings:</div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #5cb85c;"></div>
+                <span style="font-size: 11px;">Positive</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #d9534f;"></div>
+                <span style="font-size: 11px;">Negative</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-row">
+            <span class="stat-label">Factors:</span>
+            <span class="stat-value" id="stat-factors">17</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Variables:</span>
+            <span class="stat-value" id="stat-variables">-</span>
+        </div>
+        <div class="stat-row">
+            <span class="stat-label">Connections:</span>
+            <span class="stat-value" id="stat-links">-</span>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="control-label">Link Visibility Threshold</div>
+        <input type="range" class="slider" id="threshold" min="0.3" max="1" step="0.05" value="0.3">
+        <span id="threshold-value" style="color: #667eea; font-size: 12px; font-weight: bold;">0.30</span>
+        <button type="button" class="freeze-btn" id="freeze-btn">Freeze ❄️</button>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+    <div id="graph-container"></div>
+
+    <script src="https://unpkg.com/three@0.159.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph@1.73.3/dist/3d-force-graph.min.js"></script>
+    <script src="network_data.js"></script>
+    <script>
+        const tooltip = document.getElementById('tooltip');
+        const searchBox = document.getElementById('search');
+        const thresholdSlider = document.getElementById('threshold');
+        const thresholdValue = document.getElementById('threshold-value');
+        let graphData = null;
+        let highlightNodes = new Set();
+        let highlightLinks = new Set();
+        let hoverNode = null;
+        let networkCenter = { x: 0, y: 0, z: 0 };
+        // Lookup structures for fast neighbor and degree queries
+        const nodeById = new Map();     // id -> node
+        const linksByNode = new Map();  // id -> Set(links)
+        const degreeByNode = new Map(); // id -> number of incident links
+
+        // Helper function to get node ID (handles both string and object) - id for internal graph use
+        const getNodeId = (node) => typeof node === 'object' ? node.id : node;
+
+        // Extract category from variable id (e.g. absolute_pitch.first_pitch -> absolute_pitch)
+        const getCategory = (name) => {
+            if (name.startsWith('F')) return 'factor';
+            const match = name.match(/^([^.]+)\./);
+            return match ? match[1] : 'other';
+        };
+
+        // Simple debounce helper for expensive UI handlers
+        const debounce = (fn, delay) => {
+            let timeoutId;
+            return (...args) => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => fn(...args), delay);
+            };
+        };
+
+        // Prettify variable names: convert "timing.average_note_duration" to "Average Note Duration" (prefix excluded; category shown separately)
+        const prettifyName = (name) => {
+            // Keep factor names as-is (they're already formatted like "1. Timing")
+            if (name.startsWith('F') || /^\d+\./.test(name)) return name;
+            
+            // Strip category prefix (e.g. "timing.") so it's not repeated below "Category: Timing"
+            const withoutPrefix = name.includes('.') ? name.slice(name.indexOf('.') + 1) : name;
+            
+            return withoutPrefix
+                .replace(/_/g, ' ')                    // Replace underscores with spaces
+                .split(' ')
+                .filter(word => word.length > 0)       // Remove empty strings
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+        };
+
+        // Rainbow color palette for categories
+        const categoryColors = {
+            'factor': '#ff0000',              // Red
+            'timing': '#ff7f00',              // Orange
+            'contour': '#ffff00',             // Yellow
+            'absolute_pitch': '#00ff00',      // Green
+            'pitch_class': '#00ffff',         // Cyan
+            'interval': '#0080ff',            // Sky Blue
+            'tonality': '#0000ff',            // Blue
+            'expectation': '#8000ff',         // Purple
+            'complexity': '#ff00ff',          // Magenta
+            'corpus': '#ff0080',              // Hot Pink
+            'lexical_diversity': '#ff4040',   // Red-Orange
+            'metre': '#80ff00',               // Yellow-Green
+            'inter_onset_interval': '#00ff80', // Spring Green
+            'idyom': '#40e0d0',               // Turquoise
+            'other': '#888888'                // Gray
+        };
+
+        function initGraph(data) {
+            graphData = data;
+            console.log('Initializing graph with', data.nodes.length, 'nodes and', data.links.length, 'links');
+            
+            // Rebuild lookup maps (nodeById, linksByNode, degreeByNode)
+            nodeById.clear();
+            linksByNode.clear();
+            degreeByNode.clear();
+            
+            // Add category to each node, register in lookup map, and set initial scattered positions
+            data.nodes.forEach(node => {
+                node.category = getCategory(node.id);
+                nodeById.set(node.id, node);
+                // Random scattered initial position (large radius)
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.random() * Math.PI;
+                const radius = 1000 + Math.random() * 500;
+                node.fx = radius * Math.sin(phi) * Math.cos(theta);
+                node.fy = radius * Math.sin(phi) * Math.sin(theta);
+                node.fz = radius * Math.cos(phi);
+            });
+
+            // Build fast link adjacency and degree maps
+            data.links.forEach(link => {
+                const sourceId = getNodeId(link.source);
+                const targetId = getNodeId(link.target);
+
+                if (!linksByNode.has(sourceId)) linksByNode.set(sourceId, new Set());
+                if (!linksByNode.has(targetId)) linksByNode.set(targetId, new Set());
+                linksByNode.get(sourceId).add(link);
+                linksByNode.get(targetId).add(link);
+
+                degreeByNode.set(sourceId, (degreeByNode.get(sourceId) || 0) + 1);
+                degreeByNode.set(targetId, (degreeByNode.get(targetId) || 0) + 1);
+            });
+
+            const Graph = ForceGraph3D()
+                (document.getElementById('graph-container'))
+                .graphData(data)
+                .backgroundColor('#00000000')
+                .nodeLabel(() => '')
+                .nodeRelSize(4)
+                .nodeVal(node => node.category === 'factor' ? node.val * 2.5 : node.val)
+                .nodeColor(node => {
+                    if (highlightNodes.size === 0 || highlightNodes.has(node)) {
+                        return categoryColors[node.category] || '#4ecdc4';
+                    }
+                    return '#444444';
+                })
+                .nodeThreeObject(node => {
+                    if (node.category === 'factor') {
+                        // Create a glowing sphere for factors with gradient glow
+                        const group = new THREE.Group();
+                        const size = Math.cbrt(node.val * 2.5) * 4;
+                        
+                        // Inner bright core
+                        const geometry = new THREE.SphereGeometry(size, 32, 32);
+                        const material = new THREE.MeshBasicMaterial({ 
+                            color: categoryColors[node.category],
+                            transparent: true,
+                            opacity: 1
+                        });
+                        const sphere = new THREE.Mesh(geometry, material);
+                        group.add(sphere);
+                        
+                        // Multi-layer gradient glow effect (4 layers for relatively smooth falloff)
+                        const glowLayers = [
+                            { scale: 1.3, opacity: 0.5 },
+                            { scale: 1.6, opacity: 0.3 },
+                            { scale: 2.0, opacity: 0.15 },
+                            { scale: 2.5, opacity: 0.05 }
+                        ];
+                        
+                        glowLayers.forEach(layer => {
+                            const glowGeometry = new THREE.SphereGeometry(size * layer.scale, 24, 24);
+                            const glowMaterial = new THREE.MeshBasicMaterial({
+                                color: categoryColors[node.category],
+                                transparent: true,
+                                opacity: layer.opacity,
+                                side: THREE.BackSide,
+                                depthWrite: false
+                            });
+                            const glowSphere = new THREE.Mesh(glowGeometry, glowMaterial);
+                            group.add(glowSphere);
+                        });
+                        
+                        // Add text label for factors
+                        const sprite = new SpriteText(prettifyName(node.name));
+                        sprite.color = '#ffffff';
+                        sprite.textHeight = 8;
+                        sprite.position.set(0, size + 8, 0);
+                        group.add(sprite);
+                        
+                        return group;
+                    }
+                    return null; // Use default for non-factors
+                })
+                .nodeOpacity(1.0)
+                .nodeResolution(16)
+                .enableNodeDrag(false)  // Disable during animation
+                .d3VelocityDecay(0.3)   // Slower movement
+                .warmupTicks(0)         // Don't pre-calculate
+                .cooldownTicks(400)     // Run until stable, then stop (physics only on interaction)
+                .linkColor(link => {
+                    if (highlightLinks.size === 0 || highlightLinks.has(link)) {
+                        return link.sign === 'positive' ? '#5cb85c' : '#d9534f';
+                    }
+                    return 'rgba(100, 100, 100, 0.1)';
+                })
+                .linkWidth(link => {
+                    if (highlightLinks.size === 0 || highlightLinks.has(link)) {
+                        return link.value * 2;
+                    }
+                    return 0.5;
+                })
+                .linkOpacity(0)  // Start invisible for animation
+                .linkDirectionalParticles(link => highlightLinks.has(link) ? 2 : 0)
+                .linkDirectionalParticleWidth(2)
+                .linkDirectionalParticleSpeed(0.005)
+                .onNodeHover(node => {
+                    document.body.style.cursor = node ? 'pointer' : 'default';
+                    hoverNode = node;
+                    
+                    if (node) {
+                        // Show tooltip
+                        const nodeType = node.type === 'factor' ? 'Factor' : 'Variable';
+                        const category = node.category !== 'factor' ? node.category.replace(/_/g, ' ') : '';
+                        const connections = degreeByNode.get(node.id) || 0;
+                        
+                        const prettyName = prettifyName(node.name);
+                        const prettyCategory = category.replace(/_/g, ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                        
+                        tooltip.innerHTML = `
+                            <div class="tooltip-title">${nodeType}: ${prettyName}</div>
+                            ${category ? `<div style="color: ${categoryColors[node.category]}; text-transform: capitalize; margin: 5px 0;">Category: ${prettyCategory}</div>` : ''}
+                            <div>Connections: ${connections}</div>
+                        `;
+                        tooltip.style.display = 'block';
+                    } else {
+                        tooltip.style.display = 'none';
+                    }
+                })
+                .onNodeClick(node => {
+                    if (node) {
+                        highlightNodes.clear();
+                        highlightLinks.clear();
+                        
+                        // Add the clicked node
+                        highlightNodes.add(node);
+                        
+                        // Add connected nodes and links using precomputed adjacency
+                        const nodeLinks = linksByNode.get(node.id);
+                        if (nodeLinks) {
+                            nodeLinks.forEach(link => {
+                                highlightLinks.add(link);
+                                const sourceId = getNodeId(link.source);
+                                const targetId = getNodeId(link.target);
+                                const neighborId = sourceId === node.id ? targetId : sourceId;
+                                const neighborNode = nodeById.get(neighborId);
+                                if (neighborNode) highlightNodes.add(neighborNode);
+                            });
+                        }
+                        
+                        Graph.nodeColor(Graph.nodeColor())
+                            .linkColor(Graph.linkColor())
+                            .linkWidth(Graph.linkWidth())
+                            .linkOpacity(Graph.linkOpacity())
+                            .linkDirectionalParticles(Graph.linkDirectionalParticles());
+                    }
+                })
+                .onBackgroundClick(() => {
+                    highlightNodes.clear();
+                    highlightLinks.clear();
+                    Graph.nodeColor(Graph.nodeColor())
+                        .linkColor(Graph.linkColor())
+                        .linkWidth(Graph.linkWidth())
+                        .linkOpacity(Graph.linkOpacity())
+                        .linkDirectionalParticles(Graph.linkDirectionalParticles());
+                })
+                .onNodeDrag(() => {
+                    // Re-enable physics when user drags a node (after network was stable)
+                    Graph.d3Force('charge').strength(-30);
+                    Graph.d3Force('link').strength(0.5);
+                })
+                .onEngineStop(() => {
+                    // After network is stable, stop physics to save CPU/GPU
+                    Graph.d3Force('charge').strength(0);
+                    Graph.d3Force('link').strength(0);
+                });
+
+            // Initial camera position
+            Graph.cameraPosition({ x: 0, y: 0, z: 800 });
+            
+            // Gentle physics forces for smooth convergence
+            Graph.d3Force('charge').strength(-30);
+            Graph.d3Force('link').distance(link => 80);
+
+            // Search functionality (debounced to avoid excessive work while typing)
+            const handleSearchInput = (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                if (!searchTerm) {
+                    highlightNodes.clear();
+                    highlightLinks.clear();
+                } else {
+                    highlightNodes.clear();
+                    highlightLinks.clear();
+                    
+                    data.nodes.forEach(node => {
+                        const prettyName = prettifyName(node.name).toLowerCase();
+                        if (node.name.toLowerCase().includes(searchTerm) || prettyName.includes(searchTerm)) {
+                            highlightNodes.add(node);
+                            
+                            // Highlight connected links using precomputed adjacency
+                            const nodeLinks = linksByNode.get(node.id);
+                            if (nodeLinks) {
+                                nodeLinks.forEach(link => {
+                                    highlightLinks.add(link);
+                                    const sourceId = getNodeId(link.source);
+                                    const targetId = getNodeId(link.target);
+                                    const neighborId = sourceId === node.id ? targetId : sourceId;
+                                    const neighborNode = nodeById.get(neighborId);
+                                    if (neighborNode) highlightNodes.add(neighborNode);
+                                });
+                            }
+                        }
+                    });
+                }
+                
+                Graph.nodeColor(Graph.nodeColor())
+                    .linkColor(Graph.linkColor())
+                    .linkWidth(Graph.linkWidth())
+                    .linkOpacity(Graph.linkOpacity())
+                    .linkDirectionalParticles(Graph.linkDirectionalParticles());
+            };
+            searchBox.addEventListener('input', debounce(handleSearchInput, 150));
+
+            // Threshold slider (debounced to avoid recomputing too often while dragging)
+            const handleThresholdInput = (e) => {
+                const threshold = parseFloat(e.target.value);
+                thresholdValue.textContent = threshold.toFixed(2);
+                
+                const filteredLinks = graphData.links.filter(link => link.value >= threshold);
+                Graph.graphData({
+                    nodes: graphData.nodes,
+                    links: filteredLinks
+                });
+                
+                document.getElementById('stat-links').textContent = filteredLinks.length;
+            };
+            thresholdSlider.addEventListener('input', debounce(handleThresholdInput, 100));
+
+            // Mouse move for tooltip positioning
+            document.addEventListener('mousemove', (e) => {
+                if (tooltip.style.display === 'block') {
+                    tooltip.style.left = (e.clientX + 15) + 'px';
+                    tooltip.style.top = (e.clientY + 15) + 'px';
+                }
+            });
+
+            window.Graph = Graph;
+            
+            // Function to calculate network center of mass
+            const updateNetworkCenter = () => {
+                let sumX = 0, sumY = 0, sumZ = 0;
+                let count = 0;
+                data.nodes.forEach(node => {
+                    if (node.x !== undefined && node.y !== undefined && node.z !== undefined) {
+                        sumX += node.x;
+                        sumY += node.y;
+                        sumZ += node.z;
+                        count++;
+                    }
+                });
+                if (count > 0) {
+                    networkCenter = {
+                        x: sumX / count,
+                        y: sumY / count,
+                        z: sumZ / count
+                    };
+                }
+            };
+            
+            // Disable all forces initially
+            Graph.d3Force('charge').strength(0);
+            Graph.d3Force('link').strength(0);
+            
+            // Add gentle floating motion to scattered particles
+            let floatingInterval;
+            const startFloating = () => {
+                floatingInterval = setInterval(() => {
+                    data.nodes.forEach(node => {
+                        if (node.fx !== undefined) {
+                            // Very gentle drift
+                            const drift = 0.8;
+                            node.fx += (Math.random() - 0.5) * drift;
+                            node.fy += (Math.random() - 0.5) * drift;
+                            node.fz += (Math.random() - 0.5) * drift;
+                        }
+                    });
+                    Graph.numDimensions(3); // Trigger refresh
+                }, 150);
+            };
+            
+            // Animate intro sequence
+            setTimeout(() => {
+                // Phase 1: Float scattered briefly with no forces
+                startFloating();
+                
+                // Phase 2: Begin assembly
+                setTimeout(() => {
+                    clearInterval(floatingInterval);
+                    
+                    // Release nodes to allow forces to work
+                    data.nodes.forEach(node => {
+                        node.fx = undefined;
+                        node.fy = undefined;
+                        node.fz = undefined;
+                    });
+                    
+                    // Very gradually increase force strength to prevent snapping
+                    let forceStrength = -2;  // Start with extremely weak forces
+                    const targetStrength = -30;
+                    const forceRampInterval = setInterval(() => {
+                        forceStrength -= 3;  // Ramp up faster
+                        if (forceStrength <= targetStrength) {
+                            forceStrength = targetStrength;
+                            clearInterval(forceRampInterval);
+                        }
+                        Graph.d3Force('charge').strength(forceStrength);
+                        Graph.d3Force('link').strength(0.5);
+                    }, 50);  // Every 50ms
+                    
+                    // Phase 3: Fade in links
+                    setTimeout(() => {
+                        let linkOpacity = 0;
+                        const linkFadeInterval = setInterval(() => {
+                            linkOpacity += 0.03;  // Faster fade-in
+                            if (linkOpacity >= 0.6) {
+                                linkOpacity = 0.6;
+                                clearInterval(linkFadeInterval);
+                                
+                                // Phase 4: Apply threshold filter
+                                setTimeout(() => {
+                                    const threshold = 0.3;
+                                    const filteredLinks = graphData.links.filter(link => link.value >= threshold);
+                                    Graph.graphData({
+                                        nodes: graphData.nodes,
+                                        links: filteredLinks
+                                    });
+                                    document.getElementById('stat-links').textContent = filteredLinks.length;
+                                    
+                                    // Phase 5: Start smooth rotation
+                                    setTimeout(() => {
+                                    Graph.enableNodeDrag(true);
+                                    
+                                    // Calculate initial network center
+                                    updateNetworkCenter();
+                                    console.log('Network center:', networkCenter);
+                                    
+                                    // Set controls to look at network center
+                                    const controls = Graph.controls();
+                                    controls.target.set(networkCenter.x, networkCenter.y, networkCenter.z);
+                                    controls.update();
+                                    
+                                    // Hide loading screen now that rotation is starting
+                                    document.getElementById('loading').style.display = 'none';
+                                    
+                                    let angle = 0;
+                                    let isRotating = true;
+                                    let lastInteractionTime = 0;
+                                    let rotationInterval = null;
+                                    let rotationFrozenByUser = false;
+                                    let capturedDistance = 800;
+                                    let capturedY = 0;
+                                    const rotationSpeed = 0.10;
+                                    
+                                    const startRotation = () => {
+                                        if (rotationInterval) return;
+                                        isRotating = true;
+                                        
+                                        // Capture current camera position and distance when starting/resuming
+                                        const camera = Graph.camera();
+                                        updateNetworkCenter();
+                                        
+                                        const relativePos = {
+                                            x: camera.position.x - networkCenter.x,
+                                            y: camera.position.y - networkCenter.y,
+                                            z: camera.position.z - networkCenter.z
+                                        };
+                                        
+                                        // Capture distance and y position - maintain these throughout rotation
+                                        const distXZ = Math.sqrt(relativePos.x ** 2 + relativePos.z ** 2);
+                                        capturedDistance = distXZ;
+                                        capturedY = camera.position.y;
+                                        
+                                        // Sync angle with current position in XZ plane
+                                        angle = Math.atan2(relativePos.x, relativePos.z) * 180 / Math.PI;
+                                        
+                                        rotationInterval = setInterval(() => {
+                                            if (!isRotating) return;
+                                            
+                                            angle += rotationSpeed;
+                                            const radians = angle * Math.PI / 180;
+                                            
+                                            // Rotate around network center with fixed distance
+                                            Graph.cameraPosition({
+                                                x: networkCenter.x + capturedDistance * Math.sin(radians),
+                                                y: capturedY,
+                                                z: networkCenter.z + capturedDistance * Math.cos(radians)
+                                            }, networkCenter, 0);
+                                        }, 33);  // 30fps
+                                    };
+                                    
+                                    const stopRotation = () => {
+                                        isRotating = false;
+                                        if (rotationInterval) {
+                                            clearInterval(rotationInterval);
+                                            rotationInterval = null;
+                                        }
+                                    };
+                                    
+                                    const checkResumeRotation = () => {
+                                        if (rotationFrozenByUser || document.hidden) return;
+                                        const now = Date.now();
+                                        if (!isRotating && now - lastInteractionTime > 2000) {
+                                            startRotation();
+                                        }
+                                    };
+                                    
+                                    // Monitor interaction events
+                                    controls.addEventListener('start', () => {
+                                        lastInteractionTime = Date.now();
+                                        stopRotation();
+                                    });
+                                    
+                                    controls.addEventListener('change', () => {
+                                        lastInteractionTime = Date.now();
+                                    });
+                                    
+                                    controls.addEventListener('end', () => {
+                                        lastInteractionTime = Date.now();
+                                    });
+                                    
+                                    // Check every 500ms if we should resume rotation
+                                    setInterval(checkResumeRotation, 500);
+                                    
+                                    // Freeze button: prevent rotation when toggled
+                                    const freezeBtn = document.getElementById('freeze-btn');
+                                    freezeBtn.onclick = () => {
+                                        rotationFrozenByUser = !rotationFrozenByUser;
+                                        if (rotationFrozenByUser) {
+                                            stopRotation();
+                                            freezeBtn.textContent = 'Resume';
+                                        } else {
+                                            startRotation();
+                                            freezeBtn.textContent = 'Freeze';
+                                        }
+                                    };
+                                    
+                                    //  pause when tab hidden to save resources
+                                    document.addEventListener('visibilitychange', () => {
+                                        if (document.hidden) {
+                                            stopRotation();
+                                            if (typeof Graph.pauseAnimation === 'function') Graph.pauseAnimation();
+                                        } else {
+                                            if (!rotationFrozenByUser) startRotation();
+                                            if (typeof Graph.resumeAnimation === 'function') Graph.resumeAnimation();
+                                        }
+                                    });
+                                    
+                                    // Start initial rotation
+                                    startRotation();
+                                }, 300);
+                            }, 200);
+                        }
+                        
+                        // Update link opacity
+                        Graph.linkOpacity(link => {
+                            if (highlightLinks.size === 0 || highlightLinks.has(link)) {
+                                return linkOpacity;
+                            }
+                            return linkOpacity * 0.15;
+                        });
+                    }, 50);  // Link fade update interval
+                }, 400);  // Start link fade shortly after assembly begins
+                }, 500);  // Float for 0.5s then begin assembly
+            }, 100);  // Initial delay
+        }
+
+        // Initialize the graph when the page loads
+        if (typeof networkData !== 'undefined') {
+            console.log('Network data loaded successfully');
+            initGraph(networkData);
+            
+            // Update stats
+            const varCount = networkData.nodes.filter(n => n.type === 'variable').length;
+            document.getElementById('stat-variables').textContent = varCount;
+            document.getElementById('stat-links').textContent = networkData.links.length;
+        } else {
+            console.error('Network data not loaded!');
+            document.getElementById('loading').innerHTML = '<p style="color: #ff6b6b;">Error: Network data not found. Please ensure network_data.js is loaded.</p>';
+        }
+    </script>
 </body>
 </html>
