@@ -89,6 +89,67 @@
             font-size: 12px;
         }
 
+        .info-toggle-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            background: rgba(10, 14, 39, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 17px;
+            font-style: italic;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+            transition: background 0.2s, border-color 0.2s, transform 0.1s, box-shadow 0.2s;
+        }
+
+        .info-toggle-btn:hover {
+            background: rgba(40, 48, 100, 0.98);
+            border-color: #667eea;
+            box-shadow: 0 0 16px rgba(102, 126, 234, 0.6);
+            transform: translateY(-1px);
+        }
+
+        .info-panel {
+            display: none;
+            position: absolute;
+            top: 36px;
+            right: 0;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: rgba(15, 20, 55, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 12px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            width: min(420px, 70vw);
+        }
+
+        @media (max-width: 600px) {
+            .info-panel {
+                left: auto;
+                right: 0;
+                width: min(360px, 80vw);
+            }
+        }
+
+        .info-panel.visible {
+            display: block;
+        }
+
+        .info-container {
+            position: relative;
+        }
+
+        .info-panel a {
+            color: #9fb8ff;
+            text-decoration: underline;
+        }
+
         .legend-color {
             width: 16px;
             height: 16px;
@@ -164,6 +225,52 @@
             line-height: 1.4;
         }
 
+        /* this should hopefully make the site dynamically scale to mobile screens etc */
+        @media (max-width: 768px) {
+            body {
+                overflow: hidden;
+            }
+
+            .overlay {
+                top: 10px;
+                left: 10px;
+                max-width: min(340px, 82vw);
+                padding: 14px;
+            }
+
+            h1 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .info {
+                font-size: 11px;
+            }
+
+            .legend-item {
+                font-size: 11px;
+                margin: 6px 0;
+            }
+
+            .controls {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                width: calc(100vw - 20px);
+                padding: 12px;
+            }
+
+            .slider {
+                width: 100%;
+            }
+
+            .stats-wrapper {
+                top: 10px;
+                right: 10px;
+                gap: 6px;
+            }
+        }
+
         .loading {
             position: fixed;
             top: 0;
@@ -192,10 +299,17 @@
             to { transform: rotate(360deg); }
         }
 
-        .stats {
+        .stats-wrapper {
             position: fixed;
             top: 20px;
             right: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .stats {
             background: rgba(10, 14, 39, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 15px;
@@ -203,7 +317,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 12px;
-            z-index: 1000;
         }
 
         .stat-row {
@@ -293,18 +406,45 @@
         </div>
     </div>
 
-    <div class="stats">
-        <div class="stat-row">
-            <span class="stat-label">Factors:</span>
-            <span class="stat-value" id="stat-factors">17</span>
+    <div class="stats-wrapper">
+        <div class="info-container">
+            <button type="button" class="info-toggle-btn" id="info-btn"><em>i</em></button>
+            <div class="info-panel" id="info-panel">
+                <p><strong>About this visualization</strong><br>
+                This visualization represents a 3-dimensional projection of a Factor Analysis (FA) of melodic features for the Essen Folksong Collection (Schaffrath, 1995).
+                <br><br>
+                Factor Analysis is a statistical method that seeks to identify underlying latent factors that explain the correlations between variables. 
+                This allows us to reduce the dimensionality of the data while preserving the underlying structure, and to relate this underlying structure
+                to psychological or cognitive constructs through our interpretation of the factors.
+                <br><br>
+                In this example, we have identified 17 factors that explain the correlations between the 189 numerical features utilised in this FA solution.
+                By visualising the network of factor loadings, we can see which features are most strongly associated with each factor. This facilitates
+                our interpretation of these factors. For instance, we can clearly see that Factor 1 is strongly associated with mostly Timing features,
+                so we assign this factor the name "Timing". We can apply this approach to all 17 factors to assign names to each factor.
+                <br><br>
+                The 3D network diagram provides an exciting interactive environment for exploring the different relationships between the factors and features.
+                We can isolate feature nodes, factors, and move them around to traverse the complex interrelationships between them.
+                <br><br>
+                This visualization runs using the Three.js library for 3D rendering, and the 3D Force-Directed Graph library for the interactive network diagram.
+                Features were calculated using <i>melody-features</i>, a Python package for analysing monophonic MIDI melodies (Whyatt and Harrison, 2025).
+                These features were computed on all melodies in the Essen Folksong Collection.
+                <i>melody-features</i> can be found at and cited using the following DOI: <a href="https://doi.org/10.5281/zenodo.16894207">doi.org/10.5281/zenodo.16894207</a>
+              </p>
+            </div>
         </div>
-        <div class="stat-row">
-            <span class="stat-label">Variables:</span>
-            <span class="stat-value" id="stat-variables">-</span>
-        </div>
-        <div class="stat-row">
-            <span class="stat-label">Connections:</span>
-            <span class="stat-value" id="stat-links">-</span>
+        <div class="stats">
+            <div class="stat-row">
+                <span class="stat-label">Factors:</span>
+                <span class="stat-value" id="stat-factors">17</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Variables:</span>
+                <span class="stat-value" id="stat-variables">-</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Connections:</span>
+                <span class="stat-value" id="stat-links">-</span>
+            </div>
         </div>
     </div>
 
@@ -327,6 +467,8 @@
         const searchBox = document.getElementById('search');
         const thresholdSlider = document.getElementById('threshold');
         const thresholdValue = document.getElementById('threshold-value');
+        const infoBtn = document.getElementById('info-btn');
+        const infoPanel = document.getElementById('info-panel');
         let graphData = null;
         let highlightNodes = new Set();
         let highlightLinks = new Set();
@@ -390,6 +532,13 @@
             'idyom': '#40e0d0',               // Turquoise
             'other': '#888888'                // Gray
         };
+
+        // Info button toggle
+        if (infoBtn && infoPanel) {
+            infoBtn.addEventListener('click', () => {
+                infoPanel.classList.toggle('visible');
+            });
+        }
 
         function initGraph(data) {
             graphData = data;
@@ -843,10 +992,10 @@
                                         rotationFrozenByUser = !rotationFrozenByUser;
                                         if (rotationFrozenByUser) {
                                             stopRotation();
-                                            freezeBtn.textContent = 'Resume';
+                                            freezeBtn.textContent = 'Resume ▶️';
                                         } else {
                                             startRotation();
-                                            freezeBtn.textContent = 'Freeze';
+                                            freezeBtn.textContent = 'Freeze ❄️';
                                         }
                                     };
                                     
