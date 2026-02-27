@@ -33,15 +33,58 @@
             padding: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 300px;
             max-width: 300px;
             max-height: 85vh;
             overflow-y: auto;
             z-index: 1000;
+            transition: max-height 0.2s ease, padding 0.2s ease;
+        }
+
+        .overlay-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .overlay-toggle-btn {
+            padding: 4px 12px;
+            font-size: 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+            color: rgba(255, 255, 255, 0.85);
+            cursor: pointer;
+            white-space: nowrap;
+            line-height: 1.2;
+            transform: translateY(-2px); /* subtle vertical alignment with title */
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .overlay-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #667eea;
+        }
+
+        .overlay-content {
+            margin-top: 5px;
+        }
+
+        .overlay.collapsed {
+            max-height: 52px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .overlay.collapsed .overlay-content {
+            display: none;
         }
 
         h1 {
             font-size: 20px;
-            margin-bottom: 15px;
+            margin: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -234,6 +277,7 @@
             .overlay {
                 top: 10px;
                 left: 10px;
+                width: min(340px, 82vw);
                 max-width: min(340px, 82vw);
                 padding: 14px;
             }
@@ -342,13 +386,17 @@
         <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.8); font-size: 16px;">Initializing 3D visualization...</p>
     </div>
 
-    <div class="overlay">
-        <h1>Factor Network</h1>
-        <div class="info">
-            Explore the 17-factor structure of melodic features with rainbow-colored categories.  Click and drag to rotate, scroll to zoom, click nodes to highlight connections.
+    <div class="overlay" id="overlay">
+        <div class="overlay-header">
+            <h1>Factor Network</h1>
+            <button type="button" class="overlay-toggle-btn" id="overlay-toggle-btn">Hide</button>
         </div>
-        <input type="text" class="search-box" id="search" placeholder="Search nodes (e.g., 'timing', 'pitch')...">
-        <div class="legend">
+        <div class="overlay-content" id="overlay-content">
+            <div class="info">
+                Explore the 17-factor structure of melodic features with rainbow-colored categories.  Click and drag to rotate, scroll to zoom, click nodes to highlight connections.
+            </div>
+            <input type="text" class="search-box" id="search" placeholder="Search nodes (e.g., 'timing', 'pitch')...">
+            <div class="legend">
             <div class="legend-item">
                 <div class="legend-color" style="background: #ff0000; color: #ff0000; box-shadow: 0 0 20px #ff0000;"></div>
                 <span><strong>Factors (17)</strong></span>
@@ -402,6 +450,7 @@
             <div class="legend-item">
                 <div class="legend-color" style="background: #d9534f;"></div>
                 <span style="font-size: 11px;">Negative</span>
+            </div>
             </div>
         </div>
     </div>
@@ -467,6 +516,8 @@
         const searchBox = document.getElementById('search');
         const thresholdSlider = document.getElementById('threshold');
         const thresholdValue = document.getElementById('threshold-value');
+        const overlay = document.getElementById('overlay');
+        const overlayToggleBtn = document.getElementById('overlay-toggle-btn');
         const infoBtn = document.getElementById('info-btn');
         const infoPanel = document.getElementById('info-panel');
         let graphData = null;
@@ -537,6 +588,14 @@
         if (infoBtn && infoPanel) {
             infoBtn.addEventListener('click', () => {
                 infoPanel.classList.toggle('visible');
+            });
+        }
+
+        // Overlay minimize / expand toggle
+        if (overlay && overlayToggleBtn) {
+            overlayToggleBtn.addEventListener('click', () => {
+                const isCollapsed = overlay.classList.toggle('collapsed');
+                overlayToggleBtn.textContent = isCollapsed ? 'Show' : 'Hide';
             });
         }
 
@@ -800,6 +859,26 @@
             });
 
             window.Graph = Graph;
+
+            // Responsive resizing of graph when window size changes
+            const resizeGraph = () => {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                if (typeof Graph.width === 'function' && typeof Graph.height === 'function') {
+                    Graph.width(width);
+                    Graph.height(height);
+                }
+                if (Graph.renderer && Graph.renderer()) {
+                    Graph.renderer().setSize(width, height);
+                }
+                if (Graph.camera && Graph.camera()) {
+                    const camera = Graph.camera();
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+                }
+            };
+            window.addEventListener('resize', resizeGraph);
+            resizeGraph();
             
             // Function to calculate network center of mass
             const updateNetworkCenter = () => {
