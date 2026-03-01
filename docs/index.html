@@ -268,6 +268,93 @@
             line-height: 1.4;
         }
 
+        .melody-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 340px;
+            max-width: calc(100vw - 40px);
+            max-height: 85vh;
+            background: rgba(10, 14, 39, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .melody-panel.visible {
+            display: flex;
+        }
+        .melody-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+        .melody-panel-title {
+            font-size: 15px;
+            margin: 0;
+            color: #667eea;
+            font-weight: 600;
+        }
+        .melody-panel-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0 4px;
+        }
+        .melody-panel-close:hover {
+            color: #fff;
+        }
+        .melody-panel-content {
+            overflow-y: auto;
+            padding: 12px 16px 16px;
+        }
+        .melody-section {
+            margin-bottom: 18px;
+        }
+        .melody-section:last-child {
+            margin-bottom: 0;
+        }
+        .melody-section-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+        }
+        .melody-section.high .melody-section-label { color: #5cb85c; }
+        .melody-section.low .melody-section-label { color: #d9534f; }
+        .melody-example-img {
+            width: 100%;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            margin-bottom: 6px;
+        }
+        .melody-example-audio {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .melody-example-audio audio {
+            flex: 1;
+            height: 32px;
+        }
+        .melody-example-value {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         /* this should hopefully make the site dynamically scale to mobile screens etc */
         @media (max-width: 768px) {
             body {
@@ -312,6 +399,11 @@
                 top: 10px;
                 right: 10px;
                 gap: 6px;
+            }
+            .melody-panel {
+                width: min(340px, 90vw);
+                right: 10px;
+                top: 10px;
             }
         }
 
@@ -383,7 +475,10 @@
 <body>
     <div class="loading" id="loading">
         <div class="spinner"></div>
-        <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.8); font-size: 16px;">Initializing 3D visualization...</p>
+        <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.8); font-size: 16px; text-align: center;">
+            Initializing 3D visualization...<br>
+            <span style="display:block; margin-top:10px; font-size:13px; color:rgba(255,255,255,0.7); text-align:center;">For best results, please use a laptop or computer.</span>
+        </p>
     </div>
 
     <div class="overlay" id="overlay">
@@ -505,12 +600,23 @@
     </div>
 
     <div class="tooltip" id="tooltip"></div>
+
+    <!-- Melody examples panel: shown when a variable node is clicked -->
+    <div class="melody-panel" id="melody-panel">
+        <div class="melody-panel-header">
+            <h2 class="melody-panel-title" id="melody-panel-title">Melody examples</h2>
+            <button type="button" class="melody-panel-close" id="melody-panel-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="melody-panel-content" id="melody-panel-content"></div>
+    </div>
+
     <div id="graph-container"></div>
 
     <script src="https://unpkg.com/three@0.159.0/build/three.min.js"></script>
     <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
     <script src="https://unpkg.com/3d-force-graph@1.73.3/dist/3d-force-graph.min.js"></script>
     <script src="network_data.js"></script>
+    <script>
     <script>
         const tooltip = document.getElementById('tooltip');
         const searchBox = document.getElementById('search');
@@ -520,7 +626,12 @@
         const overlayToggleBtn = document.getElementById('overlay-toggle-btn');
         const infoBtn = document.getElementById('info-btn');
         const infoPanel = document.getElementById('info-panel');
+        const melodyPanel = document.getElementById('melody-panel');
+        const melodyPanelTitle = document.getElementById('melody-panel-title');
+        const melodyPanelContent = document.getElementById('melody-panel-content');
+        const melodyPanelClose = document.getElementById('melody-panel-close');
         let graphData = null;
+        let melodyManifest = null;
         let highlightNodes = new Set();
         let highlightLinks = new Set();
         let hoverNode = null;
@@ -564,6 +675,71 @@
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                 .join(' ');
         };
+
+        // Load melody examples manifest from file (requires HTTP server, e.g. GitHub Pages)
+        const loadMelodyManifest = () => {
+            if (melodyManifest !== null) return Promise.resolve(melodyManifest);
+            return fetch('melody_examples/manifest.json')
+                .then(r => r.ok ? r.json() : null)
+                .then(data => { melodyManifest = data; return melodyManifest; })
+                .catch(() => null);
+        };
+
+        const stopAllMelodyAudio = () => {
+            melodyPanelContent.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+        };
+
+        const showMelodyExamples = (variableId, variableName) => {
+            if (!melodyManifest || !melodyManifest[variableId]) {
+                melodyPanel.classList.remove('visible');
+                return;
+            }
+            stopAllMelodyAudio();
+            const entry = melodyManifest[variableId];
+            const prettyName = prettifyName(variableName || entry.label || variableId);
+            melodyPanelTitle.textContent = prettyName;
+            const baseUrl = 'melody_examples/';
+            let html = '';
+            ['high', 'low'].forEach(k => {
+                const items = entry[k];
+                if (!items || items.length === 0) return;
+                const label = k === 'high' ? 'High value' : 'Low value';
+                const sectionClass = k === 'high' ? 'high' : 'low';
+                items.forEach((ex, i) => {
+                    html += `<div class="melody-section ${sectionClass}">`;
+                    html += `<div class="melody-section-label">${label}${items.length > 1 ? ' #' + (i + 1) : ''}</div>`;
+                    if (ex.png) {
+                        html += `<img class="melody-example-img" src="${ex.png}" alt="Notation">`;
+                    }
+                    if (ex.value !== undefined) {
+                        const n = Number(ex.value);
+                        const fmt = Number.isInteger(n) ? String(n) : n.toFixed(4).replace(/\.?0+$/, '');
+                        html += `<div class="melody-example-value">Value: ${fmt}</div>`;
+                    }
+                    if (ex.audio) {
+                        html += `<div class="melody-example-audio"><audio controls preload="none" src="${ex.audio}"></audio></div>`;
+                    }
+                    html += '</div>';
+                });
+            });
+            melodyPanelContent.innerHTML = html || '<p style="color: rgba(255,255,255,0.5); font-size: 13px;">No examples for this variable.</p>';
+            // Ensure only one audio plays at a time: when one starts, stop all others
+            melodyPanelContent.querySelectorAll('audio').forEach(audio => {
+                audio.addEventListener('play', () => {
+                    melodyPanelContent.querySelectorAll('audio').forEach(other => {
+                        if (other !== audio) { other.pause(); other.currentTime = 0; }
+                    });
+                });
+            });
+            melodyPanel.classList.add('visible');
+        };
+
+        const hideMelodyExamples = () => {
+            stopAllMelodyAudio();
+            melodyPanel.classList.remove('visible');
+        };
+
+        if (melodyPanelClose) melodyPanelClose.addEventListener('click', hideMelodyExamples);
 
         // Rainbow color palette for categories
         const categoryColors = {
@@ -767,11 +943,21 @@
                             .linkWidth(Graph.linkWidth())
                             .linkOpacity(Graph.linkOpacity())
                             .linkDirectionalParticles(Graph.linkDirectionalParticles());
+
+                        // Show melody examples panel for variable nodes
+                        if (node.type === 'variable') {
+                            loadMelodyManifest().then(manifest => {
+                                if (manifest && manifest[node.id]) showMelodyExamples(node.id, node.name);
+                            });
+                        } else {
+                            hideMelodyExamples();
+                        }
                     }
                 })
                 .onBackgroundClick(() => {
                     highlightNodes.clear();
                     highlightLinks.clear();
+                    hideMelodyExamples();
                     Graph.nodeColor(Graph.nodeColor())
                         .linkColor(Graph.linkColor())
                         .linkWidth(Graph.linkWidth())

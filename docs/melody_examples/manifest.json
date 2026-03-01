@@ -1,0 +1,3971 @@
+{
+  "contour.interpolation_contour_mean_gradient": {
+    "label": "contour.interpolation_contour_mean_gradient",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn010.mid",
+        "value": 32.597842,
+        "png": "melody_examples/contour_interpolation_contour_mean_gradient_high_1.png",
+        "audio": "melody_examples/contour_interpolation_contour_mean_gradient_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4388.mid",
+        "value": 0.37931,
+        "png": "melody_examples/contour_interpolation_contour_mean_gradient_low_1.png",
+        "audio": "melody_examples/contour_interpolation_contour_mean_gradient_low_1.wav"
+      }
+    ]
+  },
+  "contour.interpolation_contour_gradient_std": {
+    "label": "contour.interpolation_contour_gradient_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn010.mid",
+        "value": 44.259553,
+        "png": "melody_examples/contour_interpolation_contour_gradient_std_high_1.png",
+        "audio": "melody_examples/contour_interpolation_contour_gradient_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4388.mid",
+        "value": 0.418889,
+        "png": "melody_examples/contour_interpolation_contour_gradient_std_low_1.png",
+        "audio": "melody_examples/contour_interpolation_contour_gradient_std_low_1.wav"
+      }
+    ]
+  },
+  "timing.average_note_duration": {
+    "label": "timing.average_note_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 3.2,
+        "png": "melody_examples/timing_average_note_duration_high_1.png",
+        "audio": "melody_examples/timing_average_note_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.125,
+        "png": "melody_examples/timing_average_note_duration_low_1.png",
+        "audio": "melody_examples/timing_average_note_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.combined_strength_of_two_strongest_rhythmic_pulses": {
+    "label": "timing.combined_strength_of_two_strongest_rhythmic_pulses",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 12.016358,
+        "png": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_high_1.png",
+        "audio": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 0.162767,
+        "png": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_low_1.png",
+        "audio": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_low_1.wav"
+      }
+    ]
+  },
+  "timing.combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized": {
+    "label": "timing.combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 12.016358,
+        "png": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 0.162767,
+        "png": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_combined_strength_of_two_strongest_rhythmic_pulses_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.complete_rests_fraction": {
+    "label": "timing.complete_rests_fraction",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut5101.mid",
+        "value": 0.363636,
+        "png": "melody_examples/timing_complete_rests_fraction_high_1.png",
+        "audio": "melody_examples/timing_complete_rests_fraction_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4040.mid",
+        "value": 0.001435,
+        "png": "melody_examples/timing_complete_rests_fraction_low_1.png",
+        "audio": "melody_examples/timing_complete_rests_fraction_low_1.wav"
+      }
+    ]
+  },
+  "timing.difference_between_most_common_rhythmic_values": {
+    "label": "timing.difference_between_most_common_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4275.mid",
+        "value": 6.0,
+        "png": "melody_examples/timing_difference_between_most_common_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_difference_between_most_common_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/appenzel.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_difference_between_most_common_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_difference_between_most_common_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.duration_range": {
+    "label": "timing.duration_range",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4073.mid",
+        "value": 15.0,
+        "png": "melody_examples/timing_duration_range_high_1.png",
+        "audio": "melody_examples/timing_duration_range_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3232.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_duration_range_low_1.png",
+        "audio": "melody_examples/timing_duration_range_low_1.wav"
+      }
+    ]
+  },
+  "timing.duration_standard_deviation": {
+    "label": "timing.duration_standard_deviation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4040.mid",
+        "value": 3.494465,
+        "png": "melody_examples/timing_duration_standard_deviation_high_1.png",
+        "audio": "melody_examples/timing_duration_standard_deviation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1678.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_duration_standard_deviation_low_1.png",
+        "audio": "melody_examples/timing_duration_standard_deviation_low_1.wav"
+      }
+    ]
+  },
+  "timing.global_duration": {
+    "label": "timing.global_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4040.mid",
+        "value": 348.5,
+        "png": "melody_examples/timing_global_duration_high_1.png",
+        "audio": "melody_examples/timing_global_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/ussr20.mid",
+        "value": 3.25,
+        "png": "melody_examples/timing_global_duration_low_1.png",
+        "audio": "melody_examples/timing_global_duration_low_1.wav"
+      }
+    ]
+  },
+  "inter_onset_interval.ioi_mean": {
+    "label": "inter_onset_interval.ioi_mean",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4178.mid",
+        "value": 3.239437,
+        "png": "melody_examples/inter_onset_interval_ioi_mean_high_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_mean_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 0.14375,
+        "png": "melody_examples/inter_onset_interval_ioi_mean_low_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_mean_low_1.wav"
+      }
+    ]
+  },
+  "inter_onset_interval.ioi_range": {
+    "label": "inter_onset_interval.ioi_range",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4366.mid",
+        "value": 11.0,
+        "png": "melody_examples/inter_onset_interval_ioi_range_high_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_range_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4058.mid",
+        "value": 0.0,
+        "png": "melody_examples/inter_onset_interval_ioi_range_low_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_range_low_1.wav"
+      }
+    ]
+  },
+  "inter_onset_interval.ioi_standard_deviation": {
+    "label": "inter_onset_interval.ioi_standard_deviation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3925.mid",
+        "value": 2.229787,
+        "png": "melody_examples/inter_onset_interval_ioi_standard_deviation_high_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_standard_deviation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4058.mid",
+        "value": 0.0,
+        "png": "melody_examples/inter_onset_interval_ioi_standard_deviation_low_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_standard_deviation_low_1.wav"
+      }
+    ]
+  },
+  "timing.longest_rhythmic_value": {
+    "label": "timing.longest_rhythmic_value",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4021.mid",
+        "value": 12.0,
+        "png": "melody_examples/timing_longest_rhythmic_value_high_1.png",
+        "audio": "melody_examples/timing_longest_rhythmic_value_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.25,
+        "png": "melody_examples/timing_longest_rhythmic_value_low_1.png",
+        "audio": "melody_examples/timing_longest_rhythmic_value_low_1.wav"
+      }
+    ]
+  },
+  "timing.maximum_note_duration": {
+    "label": "timing.maximum_note_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4073.mid",
+        "value": 8.0,
+        "png": "melody_examples/timing_maximum_note_duration_high_1.png",
+        "audio": "melody_examples/timing_maximum_note_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.125,
+        "png": "melody_examples/timing_maximum_note_duration_low_1.png",
+        "audio": "melody_examples/timing_maximum_note_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.mean_complete_rest_duration": {
+    "label": "timing.mean_complete_rest_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3925.mid",
+        "value": 7.25,
+        "png": "melody_examples/timing_mean_complete_rest_duration_high_1.png",
+        "audio": "melody_examples/timing_mean_complete_rest_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.289474,
+        "png": "melody_examples/timing_mean_complete_rest_duration_low_1.png",
+        "audio": "melody_examples/timing_mean_complete_rest_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.mean_duration": {
+    "label": "timing.mean_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 6.4,
+        "png": "melody_examples/timing_mean_duration_high_1.png",
+        "audio": "melody_examples/timing_mean_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.25,
+        "png": "melody_examples/timing_mean_duration_low_1.png",
+        "audio": "melody_examples/timing_mean_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.mean_rhythmic_value": {
+    "label": "timing.mean_rhythmic_value",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 6.4,
+        "png": "melody_examples/timing_mean_rhythmic_value_high_1.png",
+        "audio": "melody_examples/timing_mean_rhythmic_value_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.25,
+        "png": "melody_examples/timing_mean_rhythmic_value_low_1.png",
+        "audio": "melody_examples/timing_mean_rhythmic_value_low_1.wav"
+      }
+    ]
+  },
+  "timing.median_complete_rest_duration": {
+    "label": "timing.median_complete_rest_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3925.mid",
+        "value": 8.0,
+        "png": "melody_examples/timing_median_complete_rest_duration_high_1.png",
+        "audio": "melody_examples/timing_median_complete_rest_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut136.mid",
+        "value": 0.25,
+        "png": "melody_examples/timing_median_complete_rest_duration_low_1.png",
+        "audio": "melody_examples/timing_median_complete_rest_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.minimum_note_duration": {
+    "label": "timing.minimum_note_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4021.mid",
+        "value": 2.0,
+        "png": "melody_examples/timing_minimum_note_duration_high_1.png",
+        "audio": "melody_examples/timing_minimum_note_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0712.mid",
+        "value": 0.041504,
+        "png": "melody_examples/timing_minimum_note_duration_low_1.png",
+        "audio": "melody_examples/timing_minimum_note_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.modal_duration": {
+    "label": "timing.modal_duration",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4194.mid",
+        "value": 8.0,
+        "png": "melody_examples/timing_modal_duration_high_1.png",
+        "audio": "melody_examples/timing_modal_duration_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0719.mid",
+        "value": 0.125,
+        "png": "melody_examples/timing_modal_duration_low_1.png",
+        "audio": "melody_examples/timing_modal_duration_low_1.wav"
+      }
+    ]
+  },
+  "timing.most_common_rhythmic_value": {
+    "label": "timing.most_common_rhythmic_value",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3941.mid",
+        "value": 8.0,
+        "png": "melody_examples/timing_most_common_rhythmic_value_high_1.png",
+        "audio": "melody_examples/timing_most_common_rhythmic_value_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0712.mid",
+        "value": 0.125,
+        "png": "melody_examples/timing_most_common_rhythmic_value_low_1.png",
+        "audio": "melody_examples/timing_most_common_rhythmic_value_low_1.wav"
+      }
+    ]
+  },
+  "timing.note_density": {
+    "label": "timing.note_density",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 6.540541,
+        "png": "melody_examples/timing_note_density_high_1.png",
+        "audio": "melody_examples/timing_note_density_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4178.mid",
+        "value": 0.301887,
+        "png": "melody_examples/timing_note_density_low_1.png",
+        "audio": "melody_examples/timing_note_density_low_1.wav"
+      }
+    ]
+  },
+  "timing.note_density_per_quarter_note": {
+    "label": "timing.note_density_per_quarter_note",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 3.27027,
+        "png": "melody_examples/timing_note_density_per_quarter_note_high_1.png",
+        "audio": "melody_examples/timing_note_density_per_quarter_note_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4178.mid",
+        "value": 0.150943,
+        "png": "melody_examples/timing_note_density_per_quarter_note_low_1.png",
+        "audio": "melody_examples/timing_note_density_per_quarter_note_low_1.wav"
+      }
+    ]
+  },
+  "timing.note_density_per_quarter_note_variability": {
+    "label": "timing.note_density_per_quarter_note_variability",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0108.mid",
+        "value": 1.866648,
+        "png": "melody_examples/timing_note_density_per_quarter_note_variability_high_1.png",
+        "audio": "melody_examples/timing_note_density_per_quarter_note_variability_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr155.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_note_density_per_quarter_note_variability_low_1.png",
+        "audio": "melody_examples/timing_note_density_per_quarter_note_variability_low_1.wav"
+      }
+    ]
+  },
+  "timing.note_density_variability": {
+    "label": "timing.note_density_variability",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx782.mid",
+        "value": 4.101219,
+        "png": "melody_examples/timing_note_density_variability_high_1.png",
+        "audio": "melody_examples/timing_note_density_variability_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0104.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_note_density_variability_low_1.png",
+        "audio": "melody_examples/timing_note_density_variability_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_moderate_rhythmic_pulses": {
+    "label": "timing.number_of_moderate_rhythmic_pulses",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4021.mid",
+        "value": 51.0,
+        "png": "melody_examples/timing_number_of_moderate_rhythmic_pulses_high_1.png",
+        "audio": "melody_examples/timing_number_of_moderate_rhythmic_pulses_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3990.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_moderate_rhythmic_pulses_low_1.png",
+        "audio": "melody_examples/timing_number_of_moderate_rhythmic_pulses_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_moderate_rhythmic_pulses_tempo_standardized": {
+    "label": "timing.number_of_moderate_rhythmic_pulses_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4021.mid",
+        "value": 51.0,
+        "png": "melody_examples/timing_number_of_moderate_rhythmic_pulses_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_number_of_moderate_rhythmic_pulses_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3990.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_moderate_rhythmic_pulses_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_number_of_moderate_rhythmic_pulses_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_relatively_strong_rhythmic_pulses": {
+    "label": "timing.number_of_relatively_strong_rhythmic_pulses",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0712.mid",
+        "value": 18.0,
+        "png": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_high_1.png",
+        "audio": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4113.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_low_1.png",
+        "audio": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_relatively_strong_rhythmic_pulses_tempo_standardized": {
+    "label": "timing.number_of_relatively_strong_rhythmic_pulses_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0712.mid",
+        "value": 18.0,
+        "png": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4113.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_number_of_relatively_strong_rhythmic_pulses_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_strong_rhythmic_pulses": {
+    "label": "timing.number_of_strong_rhythmic_pulses",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 45.0,
+        "png": "melody_examples/timing_number_of_strong_rhythmic_pulses_high_1.png",
+        "audio": "melody_examples/timing_number_of_strong_rhythmic_pulses_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn079.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_number_of_strong_rhythmic_pulses_low_1.png",
+        "audio": "melody_examples/timing_number_of_strong_rhythmic_pulses_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_strong_rhythmic_pulses_tempo_standardized": {
+    "label": "timing.number_of_strong_rhythmic_pulses_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 45.0,
+        "png": "melody_examples/timing_number_of_strong_rhythmic_pulses_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_number_of_strong_rhythmic_pulses_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn079.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_number_of_strong_rhythmic_pulses_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_number_of_strong_rhythmic_pulses_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.polyrhythms": {
+    "label": "timing.polyrhythms",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3916.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_polyrhythms_high_1.png",
+        "audio": "melody_examples/timing_polyrhythms_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4387.mid",
+        "value": 0.083333,
+        "png": "melody_examples/timing_polyrhythms_low_1.png",
+        "audio": "melody_examples/timing_polyrhythms_low_1.wav"
+      }
+    ]
+  },
+  "timing.polyrhythms_tempo_standardized": {
+    "label": "timing.polyrhythms_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3916.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_polyrhythms_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_polyrhythms_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4387.mid",
+        "value": 0.083333,
+        "png": "melody_examples/timing_polyrhythms_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_polyrhythms_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_long_rhythmic_values": {
+    "label": "timing.prevalence_of_long_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4341.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_prevalence_of_long_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_long_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/appenzel.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_prevalence_of_long_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_long_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_short_rhythmic_values": {
+    "label": "timing.prevalence_of_short_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut129.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_prevalence_of_short_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_short_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3945.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_prevalence_of_short_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_short_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_very_short_rhythmic_values": {
+    "label": "timing.prevalence_of_very_short_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_prevalence_of_very_short_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_very_short_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_prevalence_of_very_short_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_very_short_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.shortest_rhythmic_value": {
+    "label": "timing.shortest_rhythmic_value",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4387.mid",
+        "value": 4.0,
+        "png": "melody_examples/timing_shortest_rhythmic_value_high_1.png",
+        "audio": "melody_examples/timing_shortest_rhythmic_value_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0362.mid",
+        "value": 0.125,
+        "png": "melody_examples/timing_shortest_rhythmic_value_low_1.png",
+        "audio": "melody_examples/timing_shortest_rhythmic_value_low_1.wav"
+      }
+    ]
+  },
+  "timing.strength_ratio_of_two_strongest_rhythmic_pulses": {
+    "label": "timing.strength_ratio_of_two_strongest_rhythmic_pulses",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4249.mid",
+        "value": 2.610373761310042e+16,
+        "png": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_high_1.png",
+        "audio": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0367b.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_low_1.png",
+        "audio": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_low_1.wav"
+      }
+    ]
+  },
+  "timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized": {
+    "label": "timing.strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4249.mid",
+        "value": 2.610373761310042e+16,
+        "png": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0367b.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_strength_ratio_of_two_strongest_rhythmic_pulses_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.variability_of_note_durations": {
+    "label": "timing.variability_of_note_durations",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4040.mid",
+        "value": 1.747233,
+        "png": "melody_examples/timing_variability_of_note_durations_high_1.png",
+        "audio": "melody_examples/timing_variability_of_note_durations_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1678.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_variability_of_note_durations_low_1.png",
+        "audio": "melody_examples/timing_variability_of_note_durations_low_1.wav"
+      }
+    ]
+  },
+  "timing.harmonicity_of_two_strongest_rhythmic_pulses": {
+    "label": "timing.harmonicity_of_two_strongest_rhythmic_pulses",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3937.mid",
+        "value": 60.0,
+        "png": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_high_1.png",
+        "audio": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4104.mid",
+        "value": 1.043478,
+        "png": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_low_1.png",
+        "audio": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_low_1.wav"
+      }
+    ]
+  },
+  "timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized": {
+    "label": "timing.harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3937.mid",
+        "value": 60.0,
+        "png": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4104.mid",
+        "value": 1.043478,
+        "png": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_harmonicity_of_two_strongest_rhythmic_pulses_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.rhythmic_variability": {
+    "label": "timing.rhythmic_variability",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 1.704888,
+        "png": "melody_examples/timing_rhythmic_variability_high_1.png",
+        "audio": "melody_examples/timing_rhythmic_variability_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0709.mid",
+        "value": 0.016422,
+        "png": "melody_examples/timing_rhythmic_variability_low_1.png",
+        "audio": "melody_examples/timing_rhythmic_variability_low_1.wav"
+      }
+    ]
+  },
+  "timing.rhythmic_variability_tempo_standardized": {
+    "label": "timing.rhythmic_variability_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 1.704888,
+        "png": "melody_examples/timing_rhythmic_variability_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_rhythmic_variability_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0709.mid",
+        "value": 0.016422,
+        "png": "melody_examples/timing_rhythmic_variability_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_rhythmic_variability_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.strength_of_strongest_rhythmic_pulse": {
+    "label": "timing.strength_of_strongest_rhythmic_pulse",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 6.83112,
+        "png": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_high_1.png",
+        "audio": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 0.082401,
+        "png": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_low_1.png",
+        "audio": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_low_1.wav"
+      }
+    ]
+  },
+  "timing.strength_of_strongest_rhythmic_pulse_tempo_standardized": {
+    "label": "timing.strength_of_strongest_rhythmic_pulse_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 6.83112,
+        "png": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 0.082401,
+        "png": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_strength_of_strongest_rhythmic_pulse_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "timing.meter_accent": {
+    "label": "timing.meter_accent",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/appenzel.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_meter_accent_high_1.png",
+        "audio": "melody_examples/timing_meter_accent_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4194.mid",
+        "value": -2.0,
+        "png": "melody_examples/timing_meter_accent_low_1.png",
+        "audio": "melody_examples/timing_meter_accent_low_1.wav"
+      }
+    ]
+  },
+  "tonality.mean_cloud_diameter": {
+    "label": "tonality.mean_cloud_diameter",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4587.mid",
+        "value": 0.530739,
+        "png": "melody_examples/tonality_mean_cloud_diameter_high_1.png",
+        "audio": "melody_examples/tonality_mean_cloud_diameter_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4106.mid",
+        "value": 0.0,
+        "png": "melody_examples/tonality_mean_cloud_diameter_low_1.png",
+        "audio": "melody_examples/tonality_mean_cloud_diameter_low_1.wav"
+      }
+    ]
+  },
+  "tonality.std_cloud_diameter": {
+    "label": "tonality.std_cloud_diameter",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/ellas01.mid",
+        "value": 0.320358,
+        "png": "melody_examples/tonality_std_cloud_diameter_high_1.png",
+        "audio": "melody_examples/tonality_std_cloud_diameter_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3847.mid",
+        "value": 0.0,
+        "png": "melody_examples/tonality_std_cloud_diameter_low_1.png",
+        "audio": "melody_examples/tonality_std_cloud_diameter_low_1.wav"
+      }
+    ]
+  },
+  "tonality.mean_cloud_momentum": {
+    "label": "tonality.mean_cloud_momentum",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/czech17.mid",
+        "value": 0.329735,
+        "png": "melody_examples/tonality_mean_cloud_momentum_high_1.png",
+        "audio": "melody_examples/tonality_mean_cloud_momentum_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx004.mid",
+        "value": 0.033597,
+        "png": "melody_examples/tonality_mean_cloud_momentum_low_1.png",
+        "audio": "melody_examples/tonality_mean_cloud_momentum_low_1.wav"
+      }
+    ]
+  },
+  "tonality.std_cloud_momentum": {
+    "label": "tonality.std_cloud_momentum",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4000.mid",
+        "value": 0.215381,
+        "png": "melody_examples/tonality_std_cloud_momentum_high_1.png",
+        "audio": "melody_examples/tonality_std_cloud_momentum_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx262.mid",
+        "value": 0.023649,
+        "png": "melody_examples/tonality_std_cloud_momentum_low_1.png",
+        "audio": "melody_examples/tonality_std_cloud_momentum_low_1.wav"
+      }
+    ]
+  },
+  "tonality.mean_tensile_strain": {
+    "label": "tonality.mean_tensile_strain",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut0658.mid",
+        "value": 1.17193,
+        "png": "melody_examples/tonality_mean_tensile_strain_high_1.png",
+        "audio": "melody_examples/tonality_mean_tensile_strain_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx125.mid",
+        "value": 0.053341,
+        "png": "melody_examples/tonality_mean_tensile_strain_low_1.png",
+        "audio": "melody_examples/tonality_mean_tensile_strain_low_1.wav"
+      }
+    ]
+  },
+  "tonality.std_tensile_strain": {
+    "label": "tonality.std_tensile_strain",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4587.mid",
+        "value": 0.22663,
+        "png": "melody_examples/tonality_std_tensile_strain_high_1.png",
+        "audio": "melody_examples/tonality_std_tensile_strain_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr137.mid",
+        "value": 0.016213,
+        "png": "melody_examples/tonality_std_tensile_strain_low_1.png",
+        "audio": "melody_examples/tonality_std_tensile_strain_low_1.wav"
+      }
+    ]
+  },
+  "metre.meter_denominator": {
+    "label": "metre.meter_denominator",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3537.mid",
+        "value": 8.0,
+        "png": "melody_examples/metre_meter_denominator_high_1.png",
+        "audio": "melody_examples/metre_meter_denominator_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4276.mid",
+        "value": 1.0,
+        "png": "melody_examples/metre_meter_denominator_low_1.png",
+        "audio": "melody_examples/metre_meter_denominator_low_1.wav"
+      }
+    ]
+  },
+  "complexity.complebm_rhythm": {
+    "label": "complexity.complebm_rhythm",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0712.mid",
+        "value": 11.53889,
+        "png": "melody_examples/complexity_complebm_rhythm_high_1.png",
+        "audio": "melody_examples/complexity_complebm_rhythm_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4249.mid",
+        "value": 2.002583,
+        "png": "melody_examples/complexity_complebm_rhythm_low_1.png",
+        "audio": "melody_examples/complexity_complebm_rhythm_low_1.wav"
+      }
+    ]
+  },
+  "complexity.complebm_optimal": {
+    "label": "complexity.complebm_optimal",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn078.mid",
+        "value": 12.331456,
+        "png": "melody_examples/complexity_complebm_optimal_high_1.png",
+        "audio": "melody_examples/complexity_complebm_optimal_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 5.613031,
+        "png": "melody_examples/complexity_complebm_optimal_low_1.png",
+        "audio": "melody_examples/complexity_complebm_optimal_low_1.wav"
+      }
+    ]
+  },
+  "complexity.mean_duration_accent": {
+    "label": "complexity.mean_duration_accent",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 0.982748,
+        "png": "melody_examples/complexity_mean_duration_accent_high_1.png",
+        "audio": "melody_examples/complexity_mean_duration_accent_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.048929,
+        "png": "melody_examples/complexity_mean_duration_accent_low_1.png",
+        "audio": "melody_examples/complexity_mean_duration_accent_low_1.wav"
+      }
+    ]
+  },
+  "timing.dotted_duration_transitions": {
+    "label": "timing.dotted_duration_transitions",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos028.mid",
+        "value": 0.866667,
+        "png": "melody_examples/timing_dotted_duration_transitions_high_1.png",
+        "audio": "melody_examples/timing_dotted_duration_transitions_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_dotted_duration_transitions_low_1.png",
+        "audio": "melody_examples/timing_dotted_duration_transitions_low_1.wav"
+      }
+    ]
+  },
+  "timing.duration_entropy": {
+    "label": "timing.duration_entropy",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0712.mid",
+        "value": 2.950258,
+        "png": "melody_examples/timing_duration_entropy_high_1.png",
+        "audio": "melody_examples/timing_duration_entropy_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/czech30.mid",
+        "value": -0.0,
+        "png": "melody_examples/timing_duration_entropy_low_1.png",
+        "audio": "melody_examples/timing_duration_entropy_low_1.wav"
+      }
+    ]
+  },
+  "timing.equal_duration_transitions": {
+    "label": "timing.equal_duration_transitions",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr011.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_equal_duration_transitions_high_1.png",
+        "audio": "melody_examples/timing_equal_duration_transitions_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2514.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_equal_duration_transitions_low_1.png",
+        "audio": "melody_examples/timing_equal_duration_transitions_low_1.wav"
+      }
+    ]
+  },
+  "timing.half_duration_transitions": {
+    "label": "timing.half_duration_transitions",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_half_duration_transitions_high_1.png",
+        "audio": "melody_examples/timing_half_duration_transitions_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2430.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_half_duration_transitions_low_1.png",
+        "audio": "melody_examples/timing_half_duration_transitions_low_1.wav"
+      }
+    ]
+  },
+  "inter_onset_interval.ioi_contour_standard_deviation": {
+    "label": "inter_onset_interval.ioi_contour_standard_deviation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 1.095445,
+        "png": "melody_examples/inter_onset_interval_ioi_contour_standard_deviation_high_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_contour_standard_deviation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/elsass19.mid",
+        "value": 0.0,
+        "png": "melody_examples/inter_onset_interval_ioi_contour_standard_deviation_low_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_contour_standard_deviation_low_1.wav"
+      }
+    ]
+  },
+  "inter_onset_interval.ioi_ratio_mean": {
+    "label": "inter_onset_interval.ioi_ratio_mean",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2290.mid",
+        "value": 2.614708,
+        "png": "melody_examples/inter_onset_interval_ioi_ratio_mean_high_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_ratio_mean_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1632.mid",
+        "value": 0.982759,
+        "png": "melody_examples/inter_onset_interval_ioi_ratio_mean_low_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_ratio_mean_low_1.wav"
+      }
+    ]
+  },
+  "inter_onset_interval.ioi_ratio_standard_deviation": {
+    "label": "inter_onset_interval.ioi_ratio_standard_deviation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn029.mid",
+        "value": 4.947131,
+        "png": "melody_examples/inter_onset_interval_ioi_ratio_standard_deviation_high_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_ratio_standard_deviation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos061.mid",
+        "value": 0.0,
+        "png": "melody_examples/inter_onset_interval_ioi_ratio_standard_deviation_low_1.png",
+        "audio": "melody_examples/inter_onset_interval_ioi_ratio_standard_deviation_low_1.wav"
+      }
+    ]
+  },
+  "timing.mean_rhythmic_value_run_length": {
+    "label": "timing.mean_rhythmic_value_run_length",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 78.0,
+        "png": "melody_examples/timing_mean_rhythmic_value_run_length_high_1.png",
+        "audio": "melody_examples/timing_mean_rhythmic_value_run_length_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut5040.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_mean_rhythmic_value_run_length_low_1.png",
+        "audio": "melody_examples/timing_mean_rhythmic_value_run_length_low_1.wav"
+      }
+    ]
+  },
+  "timing.median_rhythmic_value_run_length": {
+    "label": "timing.median_rhythmic_value_run_length",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 78.0,
+        "png": "melody_examples/timing_median_rhythmic_value_run_length_high_1.png",
+        "audio": "melody_examples/timing_median_rhythmic_value_run_length_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0101.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_median_rhythmic_value_run_length_low_1.png",
+        "audio": "melody_examples/timing_median_rhythmic_value_run_length_low_1.wav"
+      }
+    ]
+  },
+  "timing.npvi": {
+    "label": "timing.npvi",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2288.mid",
+        "value": 105.803177,
+        "png": "melody_examples/timing_npvi_high_1.png",
+        "audio": "melody_examples/timing_npvi_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2126.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_npvi_low_1.png",
+        "audio": "melody_examples/timing_npvi_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_common_rhythmic_values_present": {
+    "label": "timing.number_of_common_rhythmic_values_present",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2319.mid",
+        "value": 5.0,
+        "png": "melody_examples/timing_number_of_common_rhythmic_values_present_high_1.png",
+        "audio": "melody_examples/timing_number_of_common_rhythmic_values_present_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0853.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_common_rhythmic_values_present_low_1.png",
+        "audio": "melody_examples/timing_number_of_common_rhythmic_values_present_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_dotted_notes": {
+    "label": "timing.prevalence_of_dotted_notes",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2795.mid",
+        "value": 0.490566,
+        "png": "melody_examples/timing_prevalence_of_dotted_notes_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_dotted_notes_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4138.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_prevalence_of_dotted_notes_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_dotted_notes_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_most_common_rhythmic_value": {
+    "label": "timing.prevalence_of_most_common_rhythmic_value",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut0879.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_prevalence_of_most_common_rhythmic_value_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_most_common_rhythmic_value_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2319.mid",
+        "value": 0.2,
+        "png": "melody_examples/timing_prevalence_of_most_common_rhythmic_value_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_most_common_rhythmic_value_low_1.wav"
+      }
+    ]
+  },
+  "timing.relative_prevalence_of_most_common_rhythmic_values": {
+    "label": "timing.relative_prevalence_of_most_common_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4430.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_relative_prevalence_of_most_common_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_relative_prevalence_of_most_common_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2121.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_relative_prevalence_of_most_common_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_relative_prevalence_of_most_common_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.variability_in_rhythmic_value_run_lengths": {
+    "label": "timing.variability_in_rhythmic_value_run_lengths",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han1071.mid",
+        "value": 48.952358,
+        "png": "melody_examples/timing_variability_in_rhythmic_value_run_lengths_high_1.png",
+        "audio": "melody_examples/timing_variability_in_rhythmic_value_run_lengths_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut0792.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_variability_in_rhythmic_value_run_lengths_low_1.png",
+        "audio": "melody_examples/timing_variability_in_rhythmic_value_run_lengths_low_1.wav"
+      }
+    ]
+  },
+  "timing.strongest_rhythmic_pulse": {
+    "label": "timing.strongest_rhythmic_pulse",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0107.mid",
+        "value": 160.0,
+        "png": "melody_examples/timing_strongest_rhythmic_pulse_high_1.png",
+        "audio": "melody_examples/timing_strongest_rhythmic_pulse_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/lothr038.mid",
+        "value": 40.0,
+        "png": "melody_examples/timing_strongest_rhythmic_pulse_low_1.png",
+        "audio": "melody_examples/timing_strongest_rhythmic_pulse_low_1.wav"
+      }
+    ]
+  },
+  "timing.strongest_rhythmic_pulse_tempo_standardized": {
+    "label": "timing.strongest_rhythmic_pulse_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0107.mid",
+        "value": 160.0,
+        "png": "melody_examples/timing_strongest_rhythmic_pulse_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_strongest_rhythmic_pulse_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/lothr038.mid",
+        "value": 40.0,
+        "png": "melody_examples/timing_strongest_rhythmic_pulse_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_strongest_rhythmic_pulse_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "metre.syncopicity": {
+    "label": "metre.syncopicity",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4379.mid",
+        "value": 0.939394,
+        "png": "melody_examples/metre_syncopicity_high_1.png",
+        "audio": "melody_examples/metre_syncopicity_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/metre_syncopicity_low_1.png",
+        "audio": "melody_examples/metre_syncopicity_low_1.wav"
+      }
+    ]
+  },
+  "complexity.duration_accent_std": {
+    "label": "complexity.duration_accent_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn120.mid",
+        "value": 0.341508,
+        "png": "melody_examples/complexity_duration_accent_std_high_1.png",
+        "audio": "melody_examples/complexity_duration_accent_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1522.mid",
+        "value": 0.0,
+        "png": "melody_examples/complexity_duration_accent_std_low_1.png",
+        "audio": "melody_examples/complexity_duration_accent_std_low_1.wav"
+      }
+    ]
+  },
+  "corpus.mean_log_tfdf": {
+    "label": "corpus.mean_log_tfdf",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4345.mid",
+        "value": 0.003515,
+        "png": "melody_examples/corpus_mean_log_tfdf_high_1.png",
+        "audio": "melody_examples/corpus_mean_log_tfdf_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4358.mid",
+        "value": 0.000684,
+        "png": "melody_examples/corpus_mean_log_tfdf_low_1.png",
+        "audio": "melody_examples/corpus_mean_log_tfdf_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.number_of_unique_pitches": {
+    "label": "absolute_pitch.number_of_unique_pitches",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1328.mid",
+        "value": 17.0,
+        "png": "melody_examples/absolute_pitch_number_of_unique_pitches_high_1.png",
+        "audio": "melody_examples/absolute_pitch_number_of_unique_pitches_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0160.mid",
+        "value": 2.0,
+        "png": "melody_examples/absolute_pitch_number_of_unique_pitches_low_1.png",
+        "audio": "melody_examples/absolute_pitch_number_of_unique_pitches_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.pitch_range": {
+    "label": "absolute_pitch.pitch_range",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 31.0,
+        "png": "melody_examples/absolute_pitch_pitch_range_high_1.png",
+        "audio": "melody_examples/absolute_pitch_pitch_range_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 2.0,
+        "png": "melody_examples/absolute_pitch_pitch_range_low_1.png",
+        "audio": "melody_examples/absolute_pitch_pitch_range_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.pitch_class_kurtosis": {
+    "label": "pitch_class.pitch_class_kurtosis",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos019.mid",
+        "value": 16.406906,
+        "png": "melody_examples/pitch_class_pitch_class_kurtosis_high_1.png",
+        "audio": "melody_examples/pitch_class_pitch_class_kurtosis_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0360b.mid",
+        "value": 4.34664,
+        "png": "melody_examples/pitch_class_pitch_class_kurtosis_low_1.png",
+        "audio": "melody_examples/pitch_class_pitch_class_kurtosis_low_1.wav"
+      }
+    ]
+  },
+  "interval.absolute_interval_range": {
+    "label": "interval.absolute_interval_range",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 26.0,
+        "png": "melody_examples/interval_absolute_interval_range_high_1.png",
+        "audio": "melody_examples/interval_absolute_interval_range_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 1.0,
+        "png": "melody_examples/interval_absolute_interval_range_low_1.png",
+        "audio": "melody_examples/interval_absolute_interval_range_low_1.wav"
+      }
+    ]
+  },
+  "interval.minor_major_third_ratio": {
+    "label": "interval.minor_major_third_ratio",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0217.mid",
+        "value": 80.0,
+        "png": "melody_examples/interval_minor_major_third_ratio_high_1.png",
+        "audio": "melody_examples/interval_minor_major_third_ratio_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han1130.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_minor_major_third_ratio_low_1.png",
+        "audio": "melody_examples/interval_minor_major_third_ratio_low_1.wav"
+      }
+    ]
+  },
+  "contour.step_contour_local_variation": {
+    "label": "contour.step_contour_local_variation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 11.460317,
+        "png": "melody_examples/contour_step_contour_local_variation_high_1.png",
+        "audio": "melody_examples/contour_step_contour_local_variation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/ussr26.mid",
+        "value": 0.15873,
+        "png": "melody_examples/contour_step_contour_local_variation_low_1.png",
+        "audio": "melody_examples/contour_step_contour_local_variation_low_1.wav"
+      }
+    ]
+  },
+  "contour.mean_melodic_accent": {
+    "label": "contour.mean_melodic_accent",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/oestr074.mid",
+        "value": 0.500005,
+        "png": "melody_examples/contour_mean_melodic_accent_high_1.png",
+        "audio": "melody_examples/contour_mean_melodic_accent_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.163643,
+        "png": "melody_examples/contour_mean_melodic_accent_low_1.png",
+        "audio": "melody_examples/contour_mean_melodic_accent_low_1.wav"
+      }
+    ]
+  },
+  "timing.length": {
+    "label": "timing.length",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0363b.mid",
+        "value": 502.0,
+        "png": "melody_examples/timing_length_high_1.png",
+        "audio": "melody_examples/timing_length_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 8.0,
+        "png": "melody_examples/timing_length_low_1.png",
+        "audio": "melody_examples/timing_length_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_different_rhythmic_values_present": {
+    "label": "timing.number_of_different_rhythmic_values_present",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn125.mid",
+        "value": 10.0,
+        "png": "melody_examples/timing_number_of_different_rhythmic_values_present_high_1.png",
+        "audio": "melody_examples/timing_number_of_different_rhythmic_values_present_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut461.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_different_rhythmic_values_present_low_1.png",
+        "audio": "melody_examples/timing_number_of_different_rhythmic_values_present_low_1.wav"
+      }
+    ]
+  },
+  "timing.number_of_unique_durations": {
+    "label": "timing.number_of_unique_durations",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0276.mid",
+        "value": 13.0,
+        "png": "melody_examples/timing_number_of_unique_durations_high_1.png",
+        "audio": "melody_examples/timing_number_of_unique_durations_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3279.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_number_of_unique_durations_low_1.png",
+        "audio": "melody_examples/timing_number_of_unique_durations_low_1.wav"
+      }
+    ]
+  },
+  "timing.range_of_rhythmic_values": {
+    "label": "timing.range_of_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0172.mid",
+        "value": 10.0,
+        "png": "melody_examples/timing_range_of_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_range_of_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4249.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_range_of_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_range_of_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.total_number_of_notes": {
+    "label": "timing.total_number_of_notes",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0363b.mid",
+        "value": 502.0,
+        "png": "melody_examples/timing_total_number_of_notes_high_1.png",
+        "audio": "melody_examples/timing_total_number_of_notes_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 8.0,
+        "png": "melody_examples/timing_total_number_of_notes_low_1.png",
+        "audio": "melody_examples/timing_total_number_of_notes_low_1.wav"
+      }
+    ]
+  },
+  "tonality.proportion_conjunct_scalar": {
+    "label": "tonality.proportion_conjunct_scalar",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 1.0,
+        "png": "melody_examples/tonality_proportion_conjunct_scalar_high_1.png",
+        "audio": "melody_examples/tonality_proportion_conjunct_scalar_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn010.mid",
+        "value": 0.005952,
+        "png": "melody_examples/tonality_proportion_conjunct_scalar_low_1.png",
+        "audio": "melody_examples/tonality_proportion_conjunct_scalar_low_1.wav"
+      }
+    ]
+  },
+  "tonality.proportion_scalar": {
+    "label": "tonality.proportion_scalar",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos062.mid",
+        "value": 0.5,
+        "png": "melody_examples/tonality_proportion_scalar_high_1.png",
+        "audio": "melody_examples/tonality_proportion_scalar_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3810.mid",
+        "value": 0.0,
+        "png": "melody_examples/tonality_proportion_scalar_low_1.png",
+        "audio": "melody_examples/tonality_proportion_scalar_low_1.wav"
+      }
+    ]
+  },
+  "expectation.mean_melodic_accent": {
+    "label": "expectation.mean_melodic_accent",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/oestr074.mid",
+        "value": 0.500005,
+        "png": "melody_examples/expectation_mean_melodic_accent_high_1.png",
+        "audio": "melody_examples/expectation_mean_melodic_accent_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.163643,
+        "png": "melody_examples/expectation_mean_melodic_accent_low_1.png",
+        "audio": "melody_examples/expectation_mean_melodic_accent_low_1.wav"
+      }
+    ]
+  },
+  "complexity.complebm_pitch": {
+    "label": "complexity.complebm_pitch",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0056.mid",
+        "value": 11.945259,
+        "png": "melody_examples/complexity_complebm_pitch_high_1.png",
+        "audio": "melody_examples/complexity_complebm_pitch_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 6.335364,
+        "png": "melody_examples/complexity_complebm_pitch_low_1.png",
+        "audio": "melody_examples/complexity_complebm_pitch_low_1.wav"
+      }
+    ]
+  },
+  "lexical_diversity.simpsons_d": {
+    "label": "lexical_diversity.simpsons_d",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4159.mid",
+        "value": 0.555556,
+        "png": "melody_examples/lexical_diversity_simpsons_d_high_1.png",
+        "audio": "melody_examples/lexical_diversity_simpsons_d_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0192.mid",
+        "value": 0.003026,
+        "png": "melody_examples/lexical_diversity_simpsons_d_low_1.png",
+        "audio": "melody_examples/lexical_diversity_simpsons_d_low_1.wav"
+      }
+    ]
+  },
+  "lexical_diversity.mean_entropy": {
+    "label": "lexical_diversity.mean_entropy",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0126.mid",
+        "value": 6.678195,
+        "png": "melody_examples/lexical_diversity_mean_entropy_high_1.png",
+        "audio": "melody_examples/lexical_diversity_mean_entropy_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3788.mid",
+        "value": 0.636514,
+        "png": "melody_examples/lexical_diversity_mean_entropy_low_1.png",
+        "audio": "melody_examples/lexical_diversity_mean_entropy_low_1.wav"
+      }
+    ]
+  },
+  "corpus.norm_log_dist": {
+    "label": "corpus.norm_log_dist",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3776.mid",
+        "value": 0.999276,
+        "png": "melody_examples/corpus_norm_log_dist_high_1.png",
+        "audio": "melody_examples/corpus_norm_log_dist_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0126.mid",
+        "value": 0.00628,
+        "png": "melody_examples/corpus_norm_log_dist_low_1.png",
+        "audio": "melody_examples/corpus_norm_log_dist_low_1.wav"
+      }
+    ]
+  },
+  "corpus.mean_log_df": {
+    "label": "corpus.mean_log_df",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4345.mid",
+        "value": 5.817111,
+        "png": "melody_examples/corpus_mean_log_df_high_1.png",
+        "audio": "melody_examples/corpus_mean_log_df_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut559.mid",
+        "value": 1.860156,
+        "png": "melody_examples/corpus_mean_log_df_low_1.png",
+        "audio": "melody_examples/corpus_mean_log_df_low_1.wav"
+      }
+    ]
+  },
+  "corpus.mean_global_local_weight": {
+    "label": "corpus.mean_global_local_weight",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3941.mid",
+        "value": 3.661858,
+        "png": "melody_examples/corpus_mean_global_local_weight_high_1.png",
+        "audio": "melody_examples/corpus_mean_global_local_weight_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4074.mid",
+        "value": 0.990743,
+        "png": "melody_examples/corpus_mean_global_local_weight_low_1.png",
+        "audio": "melody_examples/corpus_mean_global_local_weight_low_1.wav"
+      }
+    ]
+  },
+  "corpus.std_global_local_weight": {
+    "label": "corpus.std_global_local_weight",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0460.mid",
+        "value": 5.258119,
+        "png": "melody_examples/corpus_std_global_local_weight_high_1.png",
+        "audio": "melody_examples/corpus_std_global_local_weight_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4021.mid",
+        "value": 0.0,
+        "png": "melody_examples/corpus_std_global_local_weight_low_1.png",
+        "audio": "melody_examples/corpus_std_global_local_weight_low_1.wav"
+      }
+    ]
+  },
+  "corpus.std_global_weight": {
+    "label": "corpus.std_global_weight",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0460.mid",
+        "value": 0.940208,
+        "png": "melody_examples/corpus_std_global_weight_high_1.png",
+        "audio": "melody_examples/corpus_std_global_weight_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 0.0,
+        "png": "melody_examples/corpus_std_global_weight_low_1.png",
+        "audio": "melody_examples/corpus_std_global_weight_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.melodic_pitch_variety": {
+    "label": "absolute_pitch.melodic_pitch_variety",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/oestr045.mid",
+        "value": 8.789474,
+        "png": "melody_examples/absolute_pitch_melodic_pitch_variety_high_1.png",
+        "audio": "melody_examples/absolute_pitch_melodic_pitch_variety_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut444.mid",
+        "value": 1.380952,
+        "png": "melody_examples/absolute_pitch_melodic_pitch_variety_low_1.png",
+        "audio": "melody_examples/absolute_pitch_melodic_pitch_variety_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.repeated_notes": {
+    "label": "absolute_pitch.repeated_notes",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/lothr060.mid",
+        "value": 0.766667,
+        "png": "melody_examples/absolute_pitch_repeated_notes_high_1.png",
+        "audio": "melody_examples/absolute_pitch_repeated_notes_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn177.mid",
+        "value": 0.0,
+        "png": "melody_examples/absolute_pitch_repeated_notes_low_1.png",
+        "audio": "melody_examples/absolute_pitch_repeated_notes_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.stepwise_motion": {
+    "label": "absolute_pitch.stepwise_motion",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 1.0,
+        "png": "melody_examples/absolute_pitch_stepwise_motion_high_1.png",
+        "audio": "melody_examples/absolute_pitch_stepwise_motion_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0160.mid",
+        "value": 0.0,
+        "png": "melody_examples/absolute_pitch_stepwise_motion_low_1.png",
+        "audio": "melody_examples/absolute_pitch_stepwise_motion_low_1.wav"
+      }
+    ]
+  },
+  "interval.amount_of_arpeggiation": {
+    "label": "interval.amount_of_arpeggiation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1924.mid",
+        "value": 1.0,
+        "png": "melody_examples/interval_amount_of_arpeggiation_high_1.png",
+        "audio": "melody_examples/interval_amount_of_arpeggiation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3122.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_amount_of_arpeggiation_low_1.png",
+        "audio": "melody_examples/interval_amount_of_arpeggiation_low_1.wav"
+      }
+    ]
+  },
+  "interval.distance_between_most_prevalent_melodic_intervals": {
+    "label": "interval.distance_between_most_prevalent_melodic_intervals",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 12.0,
+        "png": "melody_examples/interval_distance_between_most_prevalent_melodic_intervals_high_1.png",
+        "audio": "melody_examples/interval_distance_between_most_prevalent_melodic_intervals_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1288.mid",
+        "value": 1.0,
+        "png": "melody_examples/interval_distance_between_most_prevalent_melodic_intervals_low_1.png",
+        "audio": "melody_examples/interval_distance_between_most_prevalent_melodic_intervals_low_1.wav"
+      }
+    ]
+  },
+  "interval.interval_direction_std": {
+    "label": "interval.interval_direction_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos090.mid",
+        "value": 1.0,
+        "png": "melody_examples/interval_interval_direction_std_high_1.png",
+        "audio": "melody_examples/interval_interval_direction_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/lothr060.mid",
+        "value": 0.481894,
+        "png": "melody_examples/interval_interval_direction_std_low_1.png",
+        "audio": "melody_examples/interval_interval_direction_std_low_1.wav"
+      }
+    ]
+  },
+  "interval.interval_entropy": {
+    "label": "interval.interval_entropy",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 4.376524,
+        "png": "melody_examples/interval_interval_entropy_high_1.png",
+        "audio": "melody_examples/interval_interval_entropy_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 1.129292,
+        "png": "melody_examples/interval_interval_entropy_low_1.png",
+        "audio": "melody_examples/interval_interval_entropy_low_1.wav"
+      }
+    ]
+  },
+  "interval.mean_absolute_interval": {
+    "label": "interval.mean_absolute_interval",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 10.196532,
+        "png": "melody_examples/interval_mean_absolute_interval_high_1.png",
+        "audio": "melody_examples/interval_mean_absolute_interval_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.555556,
+        "png": "melody_examples/interval_mean_absolute_interval_low_1.png",
+        "audio": "melody_examples/interval_mean_absolute_interval_low_1.wav"
+      }
+    ]
+  },
+  "interval.modal_interval": {
+    "label": "interval.modal_interval",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse73.mid",
+        "value": 9.0,
+        "png": "melody_examples/interval_modal_interval_high_1.png",
+        "audio": "melody_examples/interval_modal_interval_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1896.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_modal_interval_low_1.png",
+        "audio": "melody_examples/interval_modal_interval_low_1.wav"
+      }
+    ]
+  },
+  "contour.melodic_accent_std": {
+    "label": "contour.melodic_accent_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4532.mid",
+        "value": 0.514491,
+        "png": "melody_examples/contour_melodic_accent_std_high_1.png",
+        "audio": "melody_examples/contour_melodic_accent_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4813.mid",
+        "value": 0.152285,
+        "png": "melody_examples/contour_melodic_accent_std_low_1.png",
+        "audio": "melody_examples/contour_melodic_accent_std_low_1.wav"
+      }
+    ]
+  },
+  "expectation.melodic_accent_std": {
+    "label": "expectation.melodic_accent_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4532.mid",
+        "value": 0.514491,
+        "png": "melody_examples/expectation_melodic_accent_std_high_1.png",
+        "audio": "melody_examples/expectation_melodic_accent_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4813.mid",
+        "value": 0.152285,
+        "png": "melody_examples/expectation_melodic_accent_std_low_1.png",
+        "audio": "melody_examples/expectation_melodic_accent_std_low_1.wav"
+      }
+    ]
+  },
+  "expectation.melodic_attraction_std": {
+    "label": "expectation.melodic_attraction_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut5046.mid",
+        "value": 0.256864,
+        "png": "melody_examples/expectation_melodic_attraction_std_high_1.png",
+        "audio": "melody_examples/expectation_melodic_attraction_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4453.mid",
+        "value": 0.098027,
+        "png": "melody_examples/expectation_melodic_attraction_std_low_1.png",
+        "audio": "melody_examples/expectation_melodic_attraction_std_low_1.wav"
+      }
+    ]
+  },
+  "complexity.gradus": {
+    "label": "complexity.gradus",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos079.mid",
+        "value": 9.0,
+        "png": "melody_examples/complexity_gradus_high_1.png",
+        "audio": "melody_examples/complexity_gradus_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr045.mid",
+        "value": 2.0,
+        "png": "melody_examples/complexity_gradus_low_1.png",
+        "audio": "melody_examples/complexity_gradus_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.pitch_standard_deviation": {
+    "label": "absolute_pitch.pitch_standard_deviation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 8.55878,
+        "png": "melody_examples/absolute_pitch_pitch_standard_deviation_high_1.png",
+        "audio": "melody_examples/absolute_pitch_pitch_standard_deviation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.711616,
+        "png": "melody_examples/absolute_pitch_pitch_standard_deviation_low_1.png",
+        "audio": "melody_examples/absolute_pitch_pitch_standard_deviation_low_1.wav"
+      }
+    ]
+  },
+  "interval.average_interval_span_by_melodic_arcs": {
+    "label": "interval.average_interval_span_by_melodic_arcs",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 16.373832,
+        "png": "melody_examples/interval_average_interval_span_by_melodic_arcs_high_1.png",
+        "audio": "melody_examples/interval_average_interval_span_by_melodic_arcs_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 2.0,
+        "png": "melody_examples/interval_average_interval_span_by_melodic_arcs_low_1.png",
+        "audio": "melody_examples/interval_average_interval_span_by_melodic_arcs_low_1.wav"
+      }
+    ]
+  },
+  "interval.direction_of_melodic_motion": {
+    "label": "interval.direction_of_melodic_motion",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3312.mid",
+        "value": 0.909091,
+        "png": "melody_examples/interval_direction_of_melodic_motion_high_1.png",
+        "audio": "melody_examples/interval_direction_of_melodic_motion_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos055.mid",
+        "value": 0.142857,
+        "png": "melody_examples/interval_direction_of_melodic_motion_low_1.png",
+        "audio": "melody_examples/interval_direction_of_melodic_motion_low_1.wav"
+      }
+    ]
+  },
+  "interval.interval_direction_mean": {
+    "label": "interval.interval_direction_mean",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3312.mid",
+        "value": 0.529412,
+        "png": "melody_examples/interval_interval_direction_mean_high_1.png",
+        "audio": "melody_examples/interval_interval_direction_mean_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos055.mid",
+        "value": -0.5,
+        "png": "melody_examples/interval_interval_direction_mean_low_1.png",
+        "audio": "melody_examples/interval_interval_direction_mean_low_1.wav"
+      }
+    ]
+  },
+  "interval.melodic_large_intervals": {
+    "label": "interval.melodic_large_intervals",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 0.33815,
+        "png": "melody_examples/interval_melodic_large_intervals_high_1.png",
+        "audio": "melody_examples/interval_melodic_large_intervals_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_melodic_large_intervals_low_1.png",
+        "audio": "melody_examples/interval_melodic_large_intervals_low_1.wav"
+      }
+    ]
+  },
+  "interval.melodic_octaves": {
+    "label": "interval.melodic_octaves",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx408.mid",
+        "value": 0.26087,
+        "png": "melody_examples/interval_melodic_octaves_high_1.png",
+        "audio": "melody_examples/interval_melodic_octaves_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4138.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_melodic_octaves_low_1.png",
+        "audio": "melody_examples/interval_melodic_octaves_low_1.wav"
+      }
+    ]
+  },
+  "interval.melodic_perfect_fifths": {
+    "label": "interval.melodic_perfect_fifths",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr116.mid",
+        "value": 0.254902,
+        "png": "melody_examples/interval_melodic_perfect_fifths_high_1.png",
+        "audio": "melody_examples/interval_melodic_perfect_fifths_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1249.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_melodic_perfect_fifths_low_1.png",
+        "audio": "melody_examples/interval_melodic_perfect_fifths_low_1.wav"
+      }
+    ]
+  },
+  "interval.melodic_sevenths": {
+    "label": "interval.melodic_sevenths",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/oestr018.mid",
+        "value": 0.2,
+        "png": "melody_examples/interval_melodic_sevenths_high_1.png",
+        "audio": "melody_examples/interval_melodic_sevenths_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_melodic_sevenths_low_1.png",
+        "audio": "melody_examples/interval_melodic_sevenths_low_1.wav"
+      }
+    ]
+  },
+  "interval.melodic_sixths": {
+    "label": "interval.melodic_sixths",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn010.mid",
+        "value": 0.377246,
+        "png": "melody_examples/interval_melodic_sixths_high_1.png",
+        "audio": "melody_examples/interval_melodic_sixths_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_melodic_sixths_low_1.png",
+        "audio": "melody_examples/interval_melodic_sixths_low_1.wav"
+      }
+    ]
+  },
+  "interval.standard_deviation_absolute_interval": {
+    "label": "interval.standard_deviation_absolute_interval",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 7.895814,
+        "png": "melody_examples/interval_standard_deviation_absolute_interval_high_1.png",
+        "audio": "melody_examples/interval_standard_deviation_absolute_interval_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos104.mid",
+        "value": 0.534522,
+        "png": "melody_examples/interval_standard_deviation_absolute_interval_low_1.png",
+        "audio": "melody_examples/interval_standard_deviation_absolute_interval_low_1.wav"
+      }
+    ]
+  },
+  "contour.step_contour_global_variation": {
+    "label": "contour.step_contour_global_variation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/china01.mid",
+        "value": 9.046268,
+        "png": "melody_examples/contour_step_contour_global_variation_high_1.png",
+        "audio": "melody_examples/contour_step_contour_global_variation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.826797,
+        "png": "melody_examples/contour_step_contour_global_variation_low_1.png",
+        "audio": "melody_examples/contour_step_contour_global_variation_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_medium_rhythmic_values": {
+    "label": "timing.prevalence_of_medium_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2235.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_prevalence_of_medium_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_medium_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4388.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_prevalence_of_medium_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_medium_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "timing.strength_of_second_strongest_rhythmic_pulse": {
+    "label": "timing.strength_of_second_strongest_rhythmic_pulse",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 5.185238,
+        "png": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_high_1.png",
+        "audio": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4249.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_low_1.png",
+        "audio": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_low_1.wav"
+      }
+    ]
+  },
+  "timing.strength_of_second_strongest_rhythmic_pulse_tempo_standardized": {
+    "label": "timing.strength_of_second_strongest_rhythmic_pulse_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 5.185238,
+        "png": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4249.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_strength_of_second_strongest_rhythmic_pulse_tempo_standardized_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.interval_between_most_prevalent_pitches": {
+    "label": "absolute_pitch.interval_between_most_prevalent_pitches",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx164.mid",
+        "value": 12.0,
+        "png": "melody_examples/absolute_pitch_interval_between_most_prevalent_pitches_high_1.png",
+        "audio": "melody_examples/absolute_pitch_interval_between_most_prevalent_pitches_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 1.0,
+        "png": "melody_examples/absolute_pitch_interval_between_most_prevalent_pitches_low_1.png",
+        "audio": "melody_examples/absolute_pitch_interval_between_most_prevalent_pitches_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.mean_tessitura": {
+    "label": "absolute_pitch.mean_tessitura",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4284.mid",
+        "value": 1.568029,
+        "png": "melody_examples/absolute_pitch_mean_tessitura_high_1.png",
+        "audio": "melody_examples/absolute_pitch_mean_tessitura_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.384798,
+        "png": "melody_examples/absolute_pitch_mean_tessitura_low_1.png",
+        "audio": "melody_examples/absolute_pitch_mean_tessitura_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.pitch_entropy": {
+    "label": "absolute_pitch.pitch_entropy",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1328.mid",
+        "value": 3.848173,
+        "png": "melody_examples/absolute_pitch_pitch_entropy_high_1.png",
+        "audio": "melody_examples/absolute_pitch_pitch_entropy_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.598347,
+        "png": "melody_examples/absolute_pitch_pitch_entropy_low_1.png",
+        "audio": "melody_examples/absolute_pitch_pitch_entropy_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.dominant_spread": {
+    "label": "pitch_class.dominant_spread",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2681.mid",
+        "value": 8.0,
+        "png": "melody_examples/pitch_class_dominant_spread_high_1.png",
+        "audio": "melody_examples/pitch_class_dominant_spread_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4138.mid",
+        "value": 1.0,
+        "png": "melody_examples/pitch_class_dominant_spread_low_1.png",
+        "audio": "melody_examples/pitch_class_dominant_spread_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.mean_pitch_class": {
+    "label": "pitch_class.mean_pitch_class",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1702.mid",
+        "value": 9.28,
+        "png": "melody_examples/pitch_class_mean_pitch_class_high_1.png",
+        "audio": "melody_examples/pitch_class_mean_pitch_class_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr137.mid",
+        "value": 1.285714,
+        "png": "melody_examples/pitch_class_mean_pitch_class_low_1.png",
+        "audio": "melody_examples/pitch_class_mean_pitch_class_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.most_common_pitch_class": {
+    "label": "pitch_class.most_common_pitch_class",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/appenzel.mid",
+        "value": 11.0,
+        "png": "melody_examples/pitch_class_most_common_pitch_class_high_1.png",
+        "audio": "melody_examples/pitch_class_most_common_pitch_class_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0398b.mid",
+        "value": 0.0,
+        "png": "melody_examples/pitch_class_most_common_pitch_class_low_1.png",
+        "audio": "melody_examples/pitch_class_most_common_pitch_class_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.strong_tonal_centres": {
+    "label": "pitch_class.strong_tonal_centres",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2611.mid",
+        "value": 4.0,
+        "png": "melody_examples/pitch_class_strong_tonal_centres_high_1.png",
+        "audio": "melody_examples/pitch_class_strong_tonal_centres_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0497.mid",
+        "value": 0.0,
+        "png": "melody_examples/pitch_class_strong_tonal_centres_low_1.png",
+        "audio": "melody_examples/pitch_class_strong_tonal_centres_low_1.wav"
+      }
+    ]
+  },
+  "interval.average_length_of_melodic_arcs": {
+    "label": "interval.average_length_of_melodic_arcs",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr177.mid",
+        "value": 11.0,
+        "png": "melody_examples/interval_average_length_of_melodic_arcs_high_1.png",
+        "audio": "melody_examples/interval_average_length_of_melodic_arcs_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 1.071429,
+        "png": "melody_examples/interval_average_length_of_melodic_arcs_low_1.png",
+        "audio": "melody_examples/interval_average_length_of_melodic_arcs_low_1.wav"
+      }
+    ]
+  },
+  "tonality.tonalness": {
+    "label": "tonality.tonalness",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut5015.mid",
+        "value": 0.992781,
+        "png": "melody_examples/tonality_tonalness_high_1.png",
+        "audio": "melody_examples/tonality_tonalness_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr084.mid",
+        "value": 0.437721,
+        "png": "melody_examples/tonality_tonalness_low_1.png",
+        "audio": "melody_examples/tonality_tonalness_low_1.wav"
+      }
+    ]
+  },
+  "expectation.mean_mobility": {
+    "label": "expectation.mean_mobility",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1328.mid",
+        "value": 4.531932,
+        "png": "melody_examples/expectation_mean_mobility_high_1.png",
+        "audio": "melody_examples/expectation_mean_mobility_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2096.mid",
+        "value": 0.017102,
+        "png": "melody_examples/expectation_mean_mobility_low_1.png",
+        "audio": "melody_examples/expectation_mean_mobility_low_1.wav"
+      }
+    ]
+  },
+  "expectation.mobility_std": {
+    "label": "expectation.mobility_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1328.mid",
+        "value": 3.559121,
+        "png": "melody_examples/expectation_mobility_std_high_1.png",
+        "audio": "melody_examples/expectation_mobility_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2096.mid",
+        "value": 0.054766,
+        "png": "melody_examples/expectation_mobility_std_low_1.png",
+        "audio": "melody_examples/expectation_mobility_std_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.number_of_common_pitches_classes": {
+    "label": "pitch_class.number_of_common_pitches_classes",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0991.mid",
+        "value": 4.0,
+        "png": "melody_examples/pitch_class_number_of_common_pitches_classes_high_1.png",
+        "audio": "melody_examples/pitch_class_number_of_common_pitches_classes_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut256.mid",
+        "value": 0.0,
+        "png": "melody_examples/pitch_class_number_of_common_pitches_classes_low_1.png",
+        "audio": "melody_examples/pitch_class_number_of_common_pitches_classes_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.number_of_unique_pitch_classes": {
+    "label": "pitch_class.number_of_unique_pitch_classes",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2765.mid",
+        "value": 12.0,
+        "png": "melody_examples/pitch_class_number_of_unique_pitch_classes_high_1.png",
+        "audio": "melody_examples/pitch_class_number_of_unique_pitch_classes_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0160.mid",
+        "value": 2.0,
+        "png": "melody_examples/pitch_class_number_of_unique_pitch_classes_low_1.png",
+        "audio": "melody_examples/pitch_class_number_of_unique_pitch_classes_low_1.wav"
+      }
+    ]
+  },
+  "interval.chromatic_motion": {
+    "label": "interval.chromatic_motion",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3713.mid",
+        "value": 0.586207,
+        "png": "melody_examples/interval_chromatic_motion_high_1.png",
+        "audio": "melody_examples/interval_chromatic_motion_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0886.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_chromatic_motion_low_1.png",
+        "audio": "melody_examples/interval_chromatic_motion_low_1.wav"
+      }
+    ]
+  },
+  "interval.melodic_thirds": {
+    "label": "interval.melodic_thirds",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1600.mid",
+        "value": 0.8,
+        "png": "melody_examples/interval_melodic_thirds_high_1.png",
+        "audio": "melody_examples/interval_melodic_thirds_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4564.mid",
+        "value": 0.0,
+        "png": "melody_examples/interval_melodic_thirds_low_1.png",
+        "audio": "melody_examples/interval_melodic_thirds_low_1.wav"
+      }
+    ]
+  },
+  "contour.step_contour_global_direction": {
+    "label": "contour.step_contour_global_direction",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1609.mid",
+        "value": 0.937819,
+        "png": "melody_examples/contour_step_contour_global_direction_high_1.png",
+        "audio": "melody_examples/contour_step_contour_global_direction_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4284.mid",
+        "value": -0.910777,
+        "png": "melody_examples/contour_step_contour_global_direction_low_1.png",
+        "audio": "melody_examples/contour_step_contour_global_direction_low_1.wav"
+      }
+    ]
+  },
+  "timing.onset_autocorr_peak": {
+    "label": "timing.onset_autocorr_peak",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3014.mid",
+        "value": 0.983051,
+        "png": "melody_examples/timing_onset_autocorr_peak_high_1.png",
+        "audio": "melody_examples/timing_onset_autocorr_peak_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn024.mid",
+        "value": 0.315297,
+        "png": "melody_examples/timing_onset_autocorr_peak_low_1.png",
+        "audio": "melody_examples/timing_onset_autocorr_peak_low_1.wav"
+      }
+    ]
+  },
+  "tonality.proportion_inscale": {
+    "label": "tonality.proportion_inscale",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4138.mid",
+        "value": 1.0,
+        "png": "melody_examples/tonality_proportion_inscale_high_1.png",
+        "audio": "melody_examples/tonality_proportion_inscale_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3987.mid",
+        "value": 0.634146,
+        "png": "melody_examples/tonality_proportion_inscale_low_1.png",
+        "audio": "melody_examples/tonality_proportion_inscale_low_1.wav"
+      }
+    ]
+  },
+  "metre.syncopation": {
+    "label": "metre.syncopation",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx445.mid",
+        "value": 4.0,
+        "png": "melody_examples/metre_syncopation_high_1.png",
+        "audio": "melody_examples/metre_syncopation_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/metre_syncopation_low_1.png",
+        "audio": "melody_examples/metre_syncopation_low_1.wav"
+      }
+    ]
+  },
+  "idyom.mean_information_content_pitch_ltm": {
+    "label": "idyom.mean_information_content_pitch_ltm",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0543.mid",
+        "value": 7.34007,
+        "png": "melody_examples/idyom_mean_information_content_pitch_ltm_high_1.png",
+        "audio": "melody_examples/idyom_mean_information_content_pitch_ltm_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut291.mid",
+        "value": 0.677883,
+        "png": "melody_examples/idyom_mean_information_content_pitch_ltm_low_1.png",
+        "audio": "melody_examples/idyom_mean_information_content_pitch_ltm_low_1.wav"
+      }
+    ]
+  },
+  "timing.prevalence_of_very_long_rhythmic_values": {
+    "label": "timing.prevalence_of_very_long_rhythmic_values",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4027.mid",
+        "value": 0.533333,
+        "png": "melody_examples/timing_prevalence_of_very_long_rhythmic_values_high_1.png",
+        "audio": "melody_examples/timing_prevalence_of_very_long_rhythmic_values_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_prevalence_of_very_long_rhythmic_values_low_1.png",
+        "audio": "melody_examples/timing_prevalence_of_very_long_rhythmic_values_low_1.wav"
+      }
+    ]
+  },
+  "lexical_diversity.yules_k": {
+    "label": "lexical_diversity.yules_k",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3788.mid",
+        "value": 2222.222222,
+        "png": "melody_examples/lexical_diversity_yules_k_high_1.png",
+        "audio": "melody_examples/lexical_diversity_yules_k_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4379.mid",
+        "value": 0.0,
+        "png": "melody_examples/lexical_diversity_yules_k_low_1.png",
+        "audio": "melody_examples/lexical_diversity_yules_k_low_1.wav"
+      }
+    ]
+  },
+  "corpus.max_log_df": {
+    "label": "corpus.max_log_df",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/appenzel.mid",
+        "value": 6.781058,
+        "png": "melody_examples/corpus_max_log_df_high_1.png",
+        "audio": "melody_examples/corpus_max_log_df_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3776.mid",
+        "value": 4.248495,
+        "png": "melody_examples/corpus_max_log_df_low_1.png",
+        "audio": "melody_examples/corpus_max_log_df_low_1.wav"
+      }
+    ]
+  },
+  "corpus.min_log_df": {
+    "label": "corpus.min_log_df",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4345.mid",
+        "value": 5.817111,
+        "png": "melody_examples/corpus_min_log_df_high_1.png",
+        "audio": "melody_examples/corpus_min_log_df_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.693147,
+        "png": "melody_examples/corpus_min_log_df_low_1.png",
+        "audio": "melody_examples/corpus_min_log_df_low_1.wav"
+      }
+    ]
+  },
+  "lexical_diversity.sichels_s": {
+    "label": "lexical_diversity.sichels_s",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1921.mid",
+        "value": 0.797101,
+        "png": "melody_examples/lexical_diversity_sichels_s_high_1.png",
+        "audio": "melody_examples/lexical_diversity_sichels_s_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4001.mid",
+        "value": 0.0,
+        "png": "melody_examples/lexical_diversity_sichels_s_low_1.png",
+        "audio": "melody_examples/lexical_diversity_sichels_s_low_1.wav"
+      }
+    ]
+  },
+  "lexical_diversity.honores_h": {
+    "label": "lexical_diversity.honores_h",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/kindr132.mid",
+        "value": 28368.513581,
+        "png": "melody_examples/lexical_diversity_honores_h_high_1.png",
+        "audio": "melody_examples/lexical_diversity_honores_h_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4159.mid",
+        "value": 219.722458,
+        "png": "melody_examples/lexical_diversity_honores_h_low_1.png",
+        "audio": "melody_examples/lexical_diversity_honores_h_low_1.wav"
+      }
+    ]
+  },
+  "lexical_diversity.mean_productivity": {
+    "label": "lexical_diversity.mean_productivity",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4261.mid",
+        "value": 1.0,
+        "png": "melody_examples/lexical_diversity_mean_productivity_high_1.png",
+        "audio": "melody_examples/lexical_diversity_mean_productivity_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3941.mid",
+        "value": 0.0,
+        "png": "melody_examples/lexical_diversity_mean_productivity_low_1.png",
+        "audio": "melody_examples/lexical_diversity_mean_productivity_low_1.wav"
+      }
+    ]
+  },
+  "corpus.tfdf_spearman": {
+    "label": "corpus.tfdf_spearman",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3831.mid",
+        "value": 1.0,
+        "png": "melody_examples/corpus_tfdf_spearman_high_1.png",
+        "audio": "melody_examples/corpus_tfdf_spearman_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4134.mid",
+        "value": -1.0,
+        "png": "melody_examples/corpus_tfdf_spearman_low_1.png",
+        "audio": "melody_examples/corpus_tfdf_spearman_low_1.wav"
+      }
+    ]
+  },
+  "corpus.tfdf_kendall": {
+    "label": "corpus.tfdf_kendall",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4295.mid",
+        "value": 1.0,
+        "png": "melody_examples/corpus_tfdf_kendall_high_1.png",
+        "audio": "melody_examples/corpus_tfdf_kendall_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4262.mid",
+        "value": -1.0,
+        "png": "melody_examples/corpus_tfdf_kendall_low_1.png",
+        "audio": "melody_examples/corpus_tfdf_kendall_low_1.wav"
+      }
+    ]
+  },
+  "corpus.mean_global_weight": {
+    "label": "corpus.mean_global_weight",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3941.mid",
+        "value": 1.317898,
+        "png": "melody_examples/corpus_mean_global_weight_high_1.png",
+        "audio": "melody_examples/corpus_mean_global_weight_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut052.mid",
+        "value": 0.980243,
+        "png": "melody_examples/corpus_mean_global_weight_low_1.png",
+        "audio": "melody_examples/corpus_mean_global_weight_low_1.wav"
+      }
+    ]
+  },
+  "interval.number_of_common_melodic_intervals": {
+    "label": "interval.number_of_common_melodic_intervals",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/steier03.mid",
+        "value": 7.0,
+        "png": "melody_examples/interval_number_of_common_melodic_intervals_high_1.png",
+        "audio": "melody_examples/interval_number_of_common_melodic_intervals_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2002.mid",
+        "value": 1.0,
+        "png": "melody_examples/interval_number_of_common_melodic_intervals_low_1.png",
+        "audio": "melody_examples/interval_number_of_common_melodic_intervals_low_1.wav"
+      }
+    ]
+  },
+  "interval.prevalence_of_most_common_melodic_interval": {
+    "label": "interval.prevalence_of_most_common_melodic_interval",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2903.mid",
+        "value": 0.863636,
+        "png": "melody_examples/interval_prevalence_of_most_common_melodic_interval_high_1.png",
+        "audio": "melody_examples/interval_prevalence_of_most_common_melodic_interval_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4464.mid",
+        "value": 0.144928,
+        "png": "melody_examples/interval_prevalence_of_most_common_melodic_interval_low_1.png",
+        "audio": "melody_examples/interval_prevalence_of_most_common_melodic_interval_low_1.wav"
+      }
+    ]
+  },
+  "interval.relative_prevalence_of_most_common_melodic_intervals": {
+    "label": "interval.relative_prevalence_of_most_common_melodic_intervals",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx037.mid",
+        "value": 1.0,
+        "png": "melody_examples/interval_relative_prevalence_of_most_common_melodic_intervals_high_1.png",
+        "audio": "melody_examples/interval_relative_prevalence_of_most_common_melodic_intervals_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos102.mid",
+        "value": 0.1,
+        "png": "melody_examples/interval_relative_prevalence_of_most_common_melodic_intervals_low_1.png",
+        "audio": "melody_examples/interval_relative_prevalence_of_most_common_melodic_intervals_low_1.wav"
+      }
+    ]
+  },
+  "tonality.longest_monotonic_conjunct_scalar_passage": {
+    "label": "tonality.longest_monotonic_conjunct_scalar_passage",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2801.mid",
+        "value": 11.0,
+        "png": "melody_examples/tonality_longest_monotonic_conjunct_scalar_passage_high_1.png",
+        "audio": "melody_examples/tonality_longest_monotonic_conjunct_scalar_passage_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn204.mid",
+        "value": 0.0,
+        "png": "melody_examples/tonality_longest_monotonic_conjunct_scalar_passage_low_1.png",
+        "audio": "melody_examples/tonality_longest_monotonic_conjunct_scalar_passage_low_1.wav"
+      }
+    ]
+  },
+  "tonality.longest_conjunct_scalar_passage": {
+    "label": "tonality.longest_conjunct_scalar_passage",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4798.mid",
+        "value": 45.0,
+        "png": "melody_examples/tonality_longest_conjunct_scalar_passage_high_1.png",
+        "audio": "melody_examples/tonality_longest_conjunct_scalar_passage_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0700.mid",
+        "value": 1.0,
+        "png": "melody_examples/tonality_longest_conjunct_scalar_passage_low_1.png",
+        "audio": "melody_examples/tonality_longest_conjunct_scalar_passage_low_1.wav"
+      }
+    ]
+  },
+  "expectation.mean_melodic_attraction": {
+    "label": "expectation.mean_melodic_attraction",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut0915.mid",
+        "value": 0.332936,
+        "png": "melody_examples/expectation_mean_melodic_attraction_high_1.png",
+        "audio": "melody_examples/expectation_mean_melodic_attraction_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx659.mid",
+        "value": 0.061346,
+        "png": "melody_examples/expectation_mean_melodic_attraction_low_1.png",
+        "audio": "melody_examples/expectation_mean_melodic_attraction_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.first_pitch": {
+    "label": "absolute_pitch.first_pitch",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx475.mid",
+        "value": 91.0,
+        "png": "melody_examples/absolute_pitch_first_pitch_high_1.png",
+        "audio": "melody_examples/absolute_pitch_first_pitch_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2395.mid",
+        "value": 48.0,
+        "png": "melody_examples/absolute_pitch_first_pitch_low_1.png",
+        "audio": "melody_examples/absolute_pitch_first_pitch_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.importance_of_bass_register": {
+    "label": "absolute_pitch.importance_of_bass_register",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut067.mid",
+        "value": 0.581395,
+        "png": "melody_examples/absolute_pitch_importance_of_bass_register_high_1.png",
+        "audio": "melody_examples/absolute_pitch_importance_of_bass_register_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/absolute_pitch_importance_of_bass_register_low_1.png",
+        "audio": "melody_examples/absolute_pitch_importance_of_bass_register_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.importance_of_high_register": {
+    "label": "absolute_pitch.importance_of_high_register",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0461.mid",
+        "value": 1.0,
+        "png": "melody_examples/absolute_pitch_importance_of_high_register_high_1.png",
+        "audio": "melody_examples/absolute_pitch_importance_of_high_register_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4138.mid",
+        "value": 0.0,
+        "png": "melody_examples/absolute_pitch_importance_of_high_register_low_1.png",
+        "audio": "melody_examples/absolute_pitch_importance_of_high_register_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.importance_of_middle_register": {
+    "label": "absolute_pitch.importance_of_middle_register",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4138.mid",
+        "value": 1.0,
+        "png": "melody_examples/absolute_pitch_importance_of_middle_register_high_1.png",
+        "audio": "melody_examples/absolute_pitch_importance_of_middle_register_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx356.mid",
+        "value": 0.0,
+        "png": "melody_examples/absolute_pitch_importance_of_middle_register_low_1.png",
+        "audio": "melody_examples/absolute_pitch_importance_of_middle_register_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.last_pitch": {
+    "label": "absolute_pitch.last_pitch",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0845.mid",
+        "value": 91.0,
+        "png": "melody_examples/absolute_pitch_last_pitch_high_1.png",
+        "audio": "melody_examples/absolute_pitch_last_pitch_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2941.mid",
+        "value": 48.0,
+        "png": "melody_examples/absolute_pitch_last_pitch_low_1.png",
+        "audio": "melody_examples/absolute_pitch_last_pitch_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.mean_pitch": {
+    "label": "absolute_pitch.mean_pitch",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0070.mid",
+        "value": 85.0,
+        "png": "melody_examples/absolute_pitch_mean_pitch_high_1.png",
+        "audio": "melody_examples/absolute_pitch_mean_pitch_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2765.mid",
+        "value": 54.0,
+        "png": "melody_examples/absolute_pitch_mean_pitch_low_1.png",
+        "audio": "melody_examples/absolute_pitch_mean_pitch_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.most_common_pitch": {
+    "label": "absolute_pitch.most_common_pitch",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0493.mid",
+        "value": 89.0,
+        "png": "melody_examples/absolute_pitch_most_common_pitch_high_1.png",
+        "audio": "melody_examples/absolute_pitch_most_common_pitch_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2394.mid",
+        "value": 52.0,
+        "png": "melody_examples/absolute_pitch_most_common_pitch_low_1.png",
+        "audio": "melody_examples/absolute_pitch_most_common_pitch_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.last_pitch_class": {
+    "label": "pitch_class.last_pitch_class",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1045.mid",
+        "value": 11.0,
+        "png": "melody_examples/pitch_class_last_pitch_class_high_1.png",
+        "audio": "melody_examples/pitch_class_last_pitch_class_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3054.mid",
+        "value": 0.0,
+        "png": "melody_examples/pitch_class_last_pitch_class_low_1.png",
+        "audio": "melody_examples/pitch_class_last_pitch_class_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.pitch_class_kurtosis_after_folding": {
+    "label": "pitch_class.pitch_class_kurtosis_after_folding",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0658.mid",
+        "value": 21.0362,
+        "png": "melody_examples/pitch_class_pitch_class_kurtosis_after_folding_high_1.png",
+        "audio": "melody_examples/pitch_class_pitch_class_kurtosis_after_folding_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0472.mid",
+        "value": 4.109876,
+        "png": "melody_examples/pitch_class_pitch_class_kurtosis_after_folding_low_1.png",
+        "audio": "melody_examples/pitch_class_pitch_class_kurtosis_after_folding_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.pitch_class_variability": {
+    "label": "pitch_class.pitch_class_variability",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1558.mid",
+        "value": 5.210952,
+        "png": "melody_examples/pitch_class_pitch_class_variability_high_1.png",
+        "audio": "melody_examples/pitch_class_pitch_class_variability_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.711616,
+        "png": "melody_examples/pitch_class_pitch_class_variability_low_1.png",
+        "audio": "melody_examples/pitch_class_pitch_class_variability_low_1.wav"
+      }
+    ]
+  },
+  "tonality.referent": {
+    "label": "tonality.referent",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0865.mid",
+        "value": 11.0,
+        "png": "melody_examples/tonality_referent_high_1.png",
+        "audio": "melody_examples/tonality_referent_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut3091.mid",
+        "value": 0.0,
+        "png": "melody_examples/tonality_referent_low_1.png",
+        "audio": "melody_examples/tonality_referent_low_1.wav"
+      }
+    ]
+  },
+  "expectation.compltrans": {
+    "label": "expectation.compltrans",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0824.mid",
+        "value": 10.00004,
+        "png": "melody_examples/expectation_compltrans_high_1.png",
+        "audio": "melody_examples/expectation_compltrans_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0160.mid",
+        "value": 0.077692,
+        "png": "melody_examples/expectation_compltrans_low_1.png",
+        "audio": "melody_examples/expectation_compltrans_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.number_of_common_pitches": {
+    "label": "absolute_pitch.number_of_common_pitches",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/natmn106.mid",
+        "value": 8.0,
+        "png": "melody_examples/absolute_pitch_number_of_common_pitches_high_1.png",
+        "audio": "melody_examples/absolute_pitch_number_of_common_pitches_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/shanx253.mid",
+        "value": 2.0,
+        "png": "melody_examples/absolute_pitch_number_of_common_pitches_low_1.png",
+        "audio": "melody_examples/absolute_pitch_number_of_common_pitches_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.prevalence_of_most_common_pitch": {
+    "label": "absolute_pitch.prevalence_of_most_common_pitch",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.854545,
+        "png": "melody_examples/absolute_pitch_prevalence_of_most_common_pitch_high_1.png",
+        "audio": "melody_examples/absolute_pitch_prevalence_of_most_common_pitch_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut420.mid",
+        "value": 0.129032,
+        "png": "melody_examples/absolute_pitch_prevalence_of_most_common_pitch_low_1.png",
+        "audio": "melody_examples/absolute_pitch_prevalence_of_most_common_pitch_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.relative_prevalence_of_top_pitches": {
+    "label": "absolute_pitch.relative_prevalence_of_top_pitches",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut0673.mid",
+        "value": 1.0,
+        "png": "melody_examples/absolute_pitch_relative_prevalence_of_top_pitches_high_1.png",
+        "audio": "melody_examples/absolute_pitch_relative_prevalence_of_top_pitches_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse69.mid",
+        "value": 0.142857,
+        "png": "melody_examples/absolute_pitch_relative_prevalence_of_top_pitches_low_1.png",
+        "audio": "melody_examples/absolute_pitch_relative_prevalence_of_top_pitches_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.prevalence_of_most_common_pitch_class": {
+    "label": "pitch_class.prevalence_of_most_common_pitch_class",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse49.mid",
+        "value": 0.854545,
+        "png": "melody_examples/pitch_class_prevalence_of_most_common_pitch_class_high_1.png",
+        "audio": "melody_examples/pitch_class_prevalence_of_most_common_pitch_class_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1443.mid",
+        "value": 0.157895,
+        "png": "melody_examples/pitch_class_prevalence_of_most_common_pitch_class_low_1.png",
+        "audio": "melody_examples/pitch_class_prevalence_of_most_common_pitch_class_low_1.wav"
+      }
+    ]
+  },
+  "pitch_class.relative_prevalence_of_top_pitch_classes": {
+    "label": "pitch_class.relative_prevalence_of_top_pitch_classes",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut0568.mid",
+        "value": 1.0,
+        "png": "melody_examples/pitch_class_relative_prevalence_of_top_pitch_classes_high_1.png",
+        "audio": "melody_examples/pitch_class_relative_prevalence_of_top_pitch_classes_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/suisse69.mid",
+        "value": 0.142857,
+        "png": "melody_examples/pitch_class_relative_prevalence_of_top_pitch_classes_low_1.png",
+        "audio": "melody_examples/pitch_class_relative_prevalence_of_top_pitch_classes_low_1.wav"
+      }
+    ]
+  },
+  "tonality.tonal_spike": {
+    "label": "tonality.tonal_spike",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4208.mid",
+        "value": 0.172007,
+        "png": "melody_examples/tonality_tonal_spike_high_1.png",
+        "audio": "melody_examples/tonality_tonal_spike_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut1643.mid",
+        "value": 0.06799,
+        "png": "melody_examples/tonality_tonal_spike_low_1.png",
+        "audio": "melody_examples/tonality_tonal_spike_low_1.wav"
+      }
+    ]
+  },
+  "timing.longest_complete_rest": {
+    "label": "timing.longest_complete_rest",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4171.mid",
+        "value": 12.0,
+        "png": "melody_examples/timing_longest_complete_rest_high_1.png",
+        "audio": "melody_examples/timing_longest_complete_rest_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 1.0,
+        "png": "melody_examples/timing_longest_complete_rest_low_1.png",
+        "audio": "melody_examples/timing_longest_complete_rest_low_1.wav"
+      }
+    ]
+  },
+  "timing.variability_of_complete_rest_durations": {
+    "label": "timing.variability_of_complete_rest_durations",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/han0892.mid",
+        "value": 6.578057,
+        "png": "melody_examples/timing_variability_of_complete_rest_durations_high_1.png",
+        "audio": "melody_examples/timing_variability_of_complete_rest_durations_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/timing_variability_of_complete_rest_durations_low_1.png",
+        "audio": "melody_examples/timing_variability_of_complete_rest_durations_low_1.wav"
+      }
+    ]
+  },
+  "expectation.melodic_embellishment": {
+    "label": "expectation.melodic_embellishment",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4625.mid",
+        "value": 0.428571,
+        "png": "melody_examples/expectation_melodic_embellishment_high_1.png",
+        "audio": "melody_examples/expectation_melodic_embellishment_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": 0.0,
+        "png": "melody_examples/expectation_melodic_embellishment_low_1.png",
+        "audio": "melody_examples/expectation_melodic_embellishment_low_1.wav"
+      }
+    ]
+  },
+  "absolute_pitch.tessitura_std": {
+    "label": "absolute_pitch.tessitura_std",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut2662.mid",
+        "value": 2.337574,
+        "png": "melody_examples/absolute_pitch_tessitura_std_high_1.png",
+        "audio": "melody_examples/absolute_pitch_tessitura_std_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/jugos028.mid",
+        "value": 0.338742,
+        "png": "melody_examples/absolute_pitch_tessitura_std_low_1.png",
+        "audio": "melody_examples/absolute_pitch_tessitura_std_low_1.wav"
+      }
+    ]
+  },
+  "contour.interpolation_contour_global_direction": {
+    "label": "contour.interpolation_contour_global_direction",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/appenzel.mid",
+        "value": 1.0,
+        "png": "melody_examples/contour_interpolation_contour_global_direction_high_1.png",
+        "audio": "melody_examples/contour_interpolation_contour_global_direction_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/vlaandr2.mid",
+        "value": -1.0,
+        "png": "melody_examples/contour_interpolation_contour_global_direction_low_1.png",
+        "audio": "melody_examples/contour_interpolation_contour_global_direction_low_1.wav"
+      }
+    ]
+  },
+  "timing.second_strongest_rhythmic_pulse": {
+    "label": "timing.second_strongest_rhythmic_pulse",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4280.mid",
+        "value": 184.0,
+        "png": "melody_examples/timing_second_strongest_rhythmic_pulse_high_1.png",
+        "audio": "melody_examples/timing_second_strongest_rhythmic_pulse_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut5120.mid",
+        "value": 40.0,
+        "png": "melody_examples/timing_second_strongest_rhythmic_pulse_low_1.png",
+        "audio": "melody_examples/timing_second_strongest_rhythmic_pulse_low_1.wav"
+      }
+    ]
+  },
+  "timing.second_strongest_rhythmic_pulse_tempo_standardized": {
+    "label": "timing.second_strongest_rhythmic_pulse_tempo_standardized",
+    "high": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut4280.mid",
+        "value": 184.0,
+        "png": "melody_examples/timing_second_strongest_rhythmic_pulse_tempo_standardized_high_1.png",
+        "audio": "melody_examples/timing_second_strongest_rhythmic_pulse_tempo_standardized_high_1.wav"
+      }
+    ],
+    "low": [
+      {
+        "rank": 1,
+        "melody_id": "/Users/davidwhyatt/Downloads/essen_new/.venv/lib/python3.12/site-packages/melody_features/corpora/essen_folksong_collection/deut5120.mid",
+        "value": 40.0,
+        "png": "melody_examples/timing_second_strongest_rhythmic_pulse_tempo_standardized_low_1.png",
+        "audio": "melody_examples/timing_second_strongest_rhythmic_pulse_tempo_standardized_low_1.wav"
+      }
+    ]
+  }
+}
