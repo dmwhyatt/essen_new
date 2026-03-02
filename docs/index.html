@@ -130,6 +130,19 @@
             align-items: center;
             margin: 8px 0;
             font-size: 12px;
+            padding: 4px 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .legend-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .legend-item.active {
+            background: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
         }
 
         .info-toggle-btn {
@@ -492,50 +505,66 @@
             </div>
             <input type="text" class="search-box" id="search" placeholder="Search nodes (e.g., 'timing', 'pitch')...">
             <div class="legend">
-            <div class="legend-item">
+            <div class="legend-item" data-category="factor">
                 <div class="legend-color" style="background: #ff0000; color: #ff0000; box-shadow: 0 0 20px #ff0000;"></div>
                 <span><strong>Factors (17)</strong></span>
             </div>
             <div style="font-size: 10px; margin: 8px 0 4px 0; color: rgba(255,255,255,0.5);">Variables by Category:</div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="absolute_pitch">
                 <div class="legend-color" style="background: #00ff00; color: #00ff00;"></div>
                 <span style="font-size: 11px;">Absolute Pitch</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="complexity">
                 <div class="legend-color" style="background: #ff00ff; color: #ff00ff;"></div>
                 <span style="font-size: 11px;">Complexity</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="contour">
                 <div class="legend-color" style="background: #ffff00; color: #ffff00;"></div>
                 <span style="font-size: 11px;">Contour</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="corpus">
                 <div class="legend-color" style="background: #ff0080; color: #ff0080;"></div>
                 <span style="font-size: 11px;">Corpus</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="expectation">
                 <div class="legend-color" style="background: #8000ff; color: #8000ff;"></div>
                 <span style="font-size: 11px;">Expectation</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="lexical_diversity">
+                <div class="legend-color" style="background: #ff4040; color: #ff4040;"></div>
+                <span style="font-size: 11px;">Lexical Diversity</span>
+            </div>
+            <div class="legend-item" data-category="inter_onset_interval">
                 <div class="legend-color" style="background: #00ff80; color: #00ff80;"></div>
                 <span style="font-size: 11px;">Inter-Onset Interval</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="metre">
+                <div class="legend-color" style="background: #80ff00; color: #80ff00;"></div>
+                <span style="font-size: 11px;">Metre</span>
+            </div>
+            <div class="legend-item" data-category="pitch_class">
                 <div class="legend-color" style="background: #00ffff; color: #00ffff;"></div>
                 <span style="font-size: 11px;">Pitch Class</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="interval">
                 <div class="legend-color" style="background: #0080ff; color: #0080ff;"></div>
                 <span style="font-size: 11px;">Pitch Interval</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="timing">
                 <div class="legend-color" style="background: #ff7f00; color: #ff7f00;"></div>
                 <span style="font-size: 11px;">Timing</span>
             </div>
-            <div class="legend-item">
+            <div class="legend-item" data-category="tonality">
                 <div class="legend-color" style="background: #0000ff; color: #0000ff;"></div>
                 <span style="font-size: 11px;">Tonality</span>
+            </div>
+            <div class="legend-item" data-category="idyom">
+                <div class="legend-color" style="background: #40e0d0; color: #40e0d0;"></div>
+                <span style="font-size: 11px;">IDyOM</span>
+            </div>
+            <div class="legend-item" data-category="other">
+                <div class="legend-color" style="background: #888888; color: #888888;"></div>
+                <span style="font-size: 11px;">Other</span>
             </div>
             <div style="font-size: 10px; margin: 8px 0 4px 0; color: rgba(255,255,255,0.5);">Loadings:</div>
             <div class="legend-item">
@@ -629,12 +658,14 @@
         const melodyPanelTitle = document.getElementById('melody-panel-title');
         const melodyPanelContent = document.getElementById('melody-panel-content');
         const melodyPanelClose = document.getElementById('melody-panel-close');
+        const legendItems = document.querySelectorAll('.legend-item[data-category]');
         let graphData = null;
         let melodyManifest = null;
         let highlightNodes = new Set();
         let highlightLinks = new Set();
         let hoverNode = null;
         let networkCenter = { x: 0, y: 0, z: 0 };
+        let activeLegendCategory = null;
         // Lookup structures for fast neighbor and degree queries
         const nodeById = new Map();     // id -> node
         const linksByNode = new Map();  // id -> Set(links)
@@ -810,6 +841,59 @@
                 degreeByNode.set(targetId, (degreeByNode.get(targetId) || 0) + 1);
             });
 
+            const applyHighlightVisuals = () => {
+                Graph.nodeColor(Graph.nodeColor())
+                    .linkColor(Graph.linkColor())
+                    .linkWidth(Graph.linkWidth())
+                    .linkOpacity(Graph.linkOpacity())
+                    .linkDirectionalParticles(Graph.linkDirectionalParticles());
+            };
+
+            const clearLegendSelection = () => {
+                activeLegendCategory = null;
+                legendItems.forEach(item => item.classList.remove('active'));
+            };
+
+            const highlightCategory = (category) => {
+                if (activeLegendCategory === category) {
+                    highlightNodes.clear();
+                    highlightLinks.clear();
+                    clearLegendSelection();
+                    applyHighlightVisuals();
+                    return;
+                }
+
+                activeLegendCategory = category;
+                legendItems.forEach(item => {
+                    const cat = item.getAttribute('data-category');
+                    item.classList.toggle('active', cat === category);
+                });
+
+                if (searchBox) searchBox.value = '';
+
+                highlightNodes.clear();
+                highlightLinks.clear();
+
+                data.nodes.forEach(node => {
+                    if (node.category === category) {
+                        highlightNodes.add(node);
+                        const nodeLinks = linksByNode.get(node.id);
+                        if (nodeLinks) {
+                            nodeLinks.forEach(link => {
+                                highlightLinks.add(link);
+                                const sourceId = getNodeId(link.source);
+                                const targetId = getNodeId(link.target);
+                                const neighborId = sourceId === node.id ? targetId : sourceId;
+                                const neighborNode = nodeById.get(neighborId);
+                                if (neighborNode) highlightNodes.add(neighborNode);
+                            });
+                        }
+                    }
+                });
+
+                applyHighlightVisuals();
+            };
+
             const Graph = ForceGraph3D()
                 (document.getElementById('graph-container'))
                 .graphData(data)
@@ -918,6 +1002,7 @@
                 })
                 .onNodeClick(node => {
                     if (node) {
+                        clearLegendSelection();
                         highlightNodes.clear();
                         highlightLinks.clear();
                         
@@ -956,6 +1041,7 @@
                 .onBackgroundClick(() => {
                     highlightNodes.clear();
                     highlightLinks.clear();
+                    clearLegendSelection();
                     hideMelodyExamples();
                     Graph.nodeColor(Graph.nodeColor())
                         .linkColor(Graph.linkColor())
@@ -987,6 +1073,7 @@
                 if (!searchTerm) {
                     highlightNodes.clear();
                     highlightLinks.clear();
+                    clearLegendSelection();
                 } else {
                     highlightNodes.clear();
                     highlightLinks.clear();
@@ -1019,6 +1106,14 @@
                     .linkDirectionalParticles(Graph.linkDirectionalParticles());
             };
             searchBox.addEventListener('input', debounce(handleSearchInput, 150));
+
+            legendItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const category = item.getAttribute('data-category');
+                    if (!category) return;
+                    highlightCategory(category);
+                });
+            });
 
             // Threshold slider (debounced to avoid recomputing too often while dragging)
             const handleThresholdInput = (e) => {
