@@ -217,7 +217,8 @@
         .controls {
             position: fixed;
             bottom: 20px;
-            left: 20px;
+            right: 20px;
+            left: auto;
             background: rgba(10, 14, 39, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 15px;
@@ -225,6 +226,39 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
+        }
+
+        .controls-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .controls-body {
+            margin-top: 8px;
+        }
+
+        .controls.collapsed .controls-body {
+            display: none;
+        }
+
+        .controls-toggle-btn {
+            padding: 3px 10px;
+            font-size: 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+            color: rgba(255, 255, 255, 0.85);
+            cursor: pointer;
+            white-space: nowrap;
+            line-height: 1.2;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .controls-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #667eea;
         }
 
         .control-label {
@@ -621,11 +655,16 @@
         </div>
     </div>
 
-    <div class="controls">
-        <div class="control-label">Link Visibility Threshold</div>
-        <input type="range" class="slider" id="threshold" min="0.3" max="1" step="0.05" value="0.3">
-        <span id="threshold-value" style="color: #667eea; font-size: 12px; font-weight: bold;">0.30</span>
-        <button type="button" class="freeze-btn" id="freeze-btn">Freeze ❄️</button>
+    <div class="controls" id="controls">
+        <div class="controls-header">
+            <div class="control-label">Link Visibility Threshold</div>
+            <button type="button" class="controls-toggle-btn" id="controls-toggle-btn">Hide</button>
+        </div>
+        <div class="controls-body">
+            <input type="range" class="slider" id="threshold" min="0.3" max="1" step="0.05" value="0.3">
+            <span id="threshold-value" style="color: #667eea; font-size: 12px; font-weight: bold;">0.30</span>
+            <button type="button" class="freeze-btn" id="freeze-btn">Freeze ❄️</button>
+        </div>
     </div>
 
     <div class="tooltip" id="tooltip"></div>
@@ -658,6 +697,8 @@
         const melodyPanelTitle = document.getElementById('melody-panel-title');
         const melodyPanelContent = document.getElementById('melody-panel-content');
         const melodyPanelClose = document.getElementById('melody-panel-close');
+        const controls = document.getElementById('controls');
+        const controlsToggleBtn = document.getElementById('controls-toggle-btn');
         const legendItems = document.querySelectorAll('.legend-item[data-category]');
         let graphData = null;
         let melodyManifest = null;
@@ -802,6 +843,14 @@
             overlayToggleBtn.addEventListener('click', () => {
                 const isCollapsed = overlay.classList.toggle('collapsed');
                 overlayToggleBtn.textContent = isCollapsed ? 'Show' : 'Hide';
+            });
+        }
+
+        // Controls (threshold box) hide/show toggle
+        if (controls && controlsToggleBtn) {
+            controlsToggleBtn.addEventListener('click', () => {
+                const isCollapsed = controls.classList.toggle('collapsed');
+                controlsToggleBtn.textContent = isCollapsed ? 'Show' : 'Hide';
             });
         }
 
